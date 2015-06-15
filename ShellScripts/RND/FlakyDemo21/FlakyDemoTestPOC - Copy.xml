@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="3cafb042-5d22-433b-b019-aa76a3256bc3" activeEnvironment="Default" name="TC Counter" resourceRoot="" soapui-version="5.1.2" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:testSuite id="b3708afb-928e-416e-bdd7-37a20d472554" name="COUNTER">
+    <con:settings/>
+    <con:runType>
+      SEQUENTIAL
+    </con:runType>
+    
+    
+    
+    <con:testCase id="231ceff5-06d5-4d5c-bfb5-98a812778424" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_Counter" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="Counter" id="faffe17a-28bf-4a4c-afcd-d12ad167b190">
+        <con:settings/>
+        <con:config><script><![CDATA[def projectLocation = context.expand( '${#Project#ProjectLocation}' )
+
+//projectLocation=projectLocation.replace("\\\\", "/").replaceAll("\\\\", "/")
+projectLocation="C:\\ALL_CODES\\uv-coordinator-api-regression\\Projects\\201502\\"
+log.info "########### PROCESSING LOCATION : " + projectLocation;
+
+def Total=0
+def tcCnt=0;
+new File(projectLocation).eachFileRecurse 
+{ 
+	//log.info "### Processing file : " + projectLocation+"\\"+it.name
+	if(it.name.contains('.xml') )
+	{	
+		xmlFile=it.name.toString()
+		log.info "###### Processing File " + it.getCanonicalPath() ;
+		cannoPath=it.getCanonicalPath() 
+		String fileContents = new File(cannoPath).text
+		
+		def myXml= new XmlParser().parseText(fileContents)
+		myXml.each
+		{Suites->
+			if(Suites.toString().contains('testSuite') && !Suites.@disabled && !Suites.@name.toString().toLowerCase().contains('setup'))
+			{	
+				Suites.each
+				{cases->	
+					if(cases.toString().contains('testCase') && !cases.@disabled)// && cases.toString().contains("FLAKY"))
+					{	
+						tcCnt=tcCnt+1;
+					}
+					//log.info "Suite Name : " + Suites.@name + " disabled = " + Suites.@disabled + "TC Count = " + tcCnt;
+				}
+				
+				
+			}
+			
+		}      
+	Total=Total+tcCnt;
+	log.info "##### TC Count for Project : " + it.name+ "=  $tcCnt" 
+	new File("C:\\ALL_CODES\\TcCount.csv").append( it.name+",$tcCnt\n")
+	tcCnt=0
+}
+}
+log.info  "#### Total Count of TCs at $projectLocation = " +Total;
+
+//log.info  "#### Total Count of TCs at = " + projectLocation.replace("\\\\", "/").replaceAll("\\\\", "/")//.split("/").pop();
+
+new File("C:\\ALL_CODES\\TcCount.csv").append("\n$projectLocation,$Total\n\n")
+]]></script></con:config>
+      </con:testStep>
+      
+      
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase><con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:requirements/>
+  <con:properties><con:property><con:name>ProjectLocation</con:name><con:value>C:\ALL_CODES\uv-coordinator-api-regression\Projects\201502\AccountUsers\</con:value></con:property></con:properties>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:sensitiveInformation/>
+</con:soapui-project>

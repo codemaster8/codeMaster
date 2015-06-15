@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="R15_AccountCreate" resourceRoot="${projectDir}" soapui-version="5.1.2" defaultScriptLanguage="Groovy" activeEnvironment="Default" id="5cc9521a-3a93-47f4-919d-56b38b37fff6" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="&lt;all>"/>
+  <con:entry key="Report to Generate" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="soapui-setings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="true"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value="E:\DECE API\STS\Builds\R3\106.2.3\Reports106\STSAPI_Payload_NodeOId_TCs_R3"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+</xml-fragment>]]></con:setting><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="GeneratableJUnitReport@Style">Single Page (Print)</con:setting><con:setting id="GeneratableJUnitReport@Folder">/opt/dece/soapUIReports/Dev_Reports/AccountCreate</con:setting></con:settings><con:testSuite name="AccountCreate_Method_Test_P2" id="e9f71305-5a96-4c2b-a9a1-7e8af004fe27"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="FLAKY" searchProperties="true" id="14716428-fc7a-4123-882f-590f44951f27"><con:settings/><con:testStep type="groovy" name="Establish Test Case Properties" id="6604f988-ba87-442e-99e2-95aa52a1aa1e"><con:settings/><con:config><script>def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+tC.setPropertyValue("nodeid",tP.getPropertyValue("nodeIdRTL"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetPem" id="0b45f447-ae67-4118-aa1c-e3e1fe185cd7"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep;
+import com.eviware.soapui.support.types.StringToStringMap 
+import soapUIUtils.soapUIUtils;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context) 
+//def certPath = groovyUtils.projectPath
+
+//Set fileKeyStorePath value 
+//log.info "certPath: "+certPath;
+//tP.setPropertyValue("certPath",""+certPath);
+
+tC.setPropertyValue("keyStorePath",null);
+
+def myTC = tP.getTestSuiteByName("CommonTestSteps").getTestCaseByName("SetPem")
+
+myTC.setPropertyValue("nodeId",tC.getPropertyValue("nodeId"));
+myTC.setPropertyValue("tName",tC.getName());
+myTC.setPropertyValue("sName",tS.getName());
+
+def runnerTC = myTC.run( null , false );
+assert runnerTC.status == Status.FINISHED;
+
+RestTestRequestStep testStep = tC.getTestStepByName("AccountCreate_Get");
+def keyStorePath = tC.getPropertyValue("keyStorePath");
+
+this.log.info "testStep [$testStep]";
+this.log.info "keyStorePathStep [$keyStorePath]";
+
+soapUtils = new soapUIUtils(log);
+soapUtils.setStepSSLSettingsKeyStore(testStep, keyStorePath);</script></con:config></con:testStep><con:properties><con:property><con:name>nodeid</con:name><con:value>RET</con:value></con:property><con:property><con:name>keyStorePath</con:name><con:value>C:/certs/RET_concat.pem</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_DECE_02002_AccountCreate_MTHD_API_Invocation_with_PUT_method_P2" searchProperties="true" id="db0bd136-9c0e-4a51-bd1f-89b09bda37b2"><con:settings/><con:testStep type="groovy" name="Establish Test Case Properties" id="d1db98d3-d28d-473f-a3c5-5054581129ca"><con:settings/><con:config><script>def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+tC.setPropertyValue("nodeid",tP.getPropertyValue("nodeIdRTL"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetPem" id="f02e546c-f5f1-4130-81be-2312d4f09027"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep;
+import com.eviware.soapui.support.types.StringToStringMap 
+import soapUIUtils.soapUIUtils;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context) 
+//def certPath = groovyUtils.projectPath
+
+//Set fileKeyStorePath value 
+//log.info "certPath: "+certPath;
+//tP.setPropertyValue("certPath",""+certPath);
+
+tC.setPropertyValue("keyStorePath",null);
+
+def myTC = tP.getTestSuiteByName("CommonTestSteps").getTestCaseByName("SetPem")
+
+myTC.setPropertyValue("nodeId",tC.getPropertyValue("nodeId"));
+myTC.setPropertyValue("tName",tC.getName());
+myTC.setPropertyValue("sName",tS.getName());
+
+def runnerTC = myTC.run( null , false );
+assert runnerTC.status == Status.FINISHED;
+
+RestTestRequestStep testStep = tC.getTestStepByName("AccountCreate_PUT");
+def keyStorePath = tC.getPropertyValue("keyStorePath");
+
+this.log.info "testStep [$testStep]";
+this.log.info "keyStorePathStep [$keyStorePath]";
+
+soapUtils = new soapUIUtils(log);
+soapUtils.setStepSSLSettingsKeyStore(testStep, keyStorePath);</script></con:config></con:testStep><con:properties><con:property><con:name>nodeid</con:name><con:value>RET</con:value></con:property><con:property><con:name>keyStorePath</con:name><con:value>C:/certs/RET_concat.pem</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_DECE_02003_AccountCreate_MTHD_API_Invocation_with_DELETE_method_P2" searchProperties="true" id="03ca1a9c-3ce7-4bca-aec2-1668f78ec9c8"><con:settings/><con:testStep type="groovy" name="Establish Test Case Properties" id="da4f14a9-e75f-4db0-b8bc-b52460eb759f"><con:settings/><con:config><script>def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+tC.setPropertyValue("nodeid",tP.getPropertyValue("nodeIdRTL"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetPem" id="559978af-341f-4ea3-a91c-cecddaaf3591"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep;
+import com.eviware.soapui.support.types.StringToStringMap 
+import soapUIUtils.soapUIUtils;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context) 
+//def certPath = groovyUtils.projectPath
+
+//Set fileKeyStorePath value 
+//log.info "certPath: "+certPath;
+//tP.setPropertyValue("certPath",""+certPath);
+
+tC.setPropertyValue("keyStorePath",null);
+
+def myTC = tP.getTestSuiteByName("CommonTestSteps").getTestCaseByName("SetPem")
+
+myTC.setPropertyValue("nodeId",tC.getPropertyValue("nodeId"));
+myTC.setPropertyValue("tName",tC.getName());
+myTC.setPropertyValue("sName",tS.getName());
+
+def runnerTC = myTC.run( null , false );
+assert runnerTC.status == Status.FINISHED;
+
+RestTestRequestStep testStep = tC.getTestStepByName("AccountCreate_DEL");
+def keyStorePath = tC.getPropertyValue("keyStorePath");
+
+this.log.info "testStep [$testStep]";
+this.log.info "keyStorePathStep [$keyStorePath]";
+
+soapUtils = new soapUIUtils(log);
+soapUtils.setStepSSLSettingsKeyStore(testStep, keyStorePath);</script></con:config></con:testStep><con:properties><con:property><con:name>nodeid</con:name><con:value>RET</con:value></con:property><con:property><con:name>keyStorePath</con:name><con:value>C:/certs/RET_concat.pem</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="FLAKY TC_DECE_02004_AccountCreate_MTHD_API_Invocation_with_HEAD_method_P" searchProperties="true" id="1beea69a-f23d-4e0e-b169-394f6027e2e5"><con:settings/><con:testStep type="groovy" name="Establish Test Case Properties" id="d80d9e0d-0e4b-4aa4-9cd1-022f3a06461a"><con:settings/><con:config><script>def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+tC.setPropertyValue("nodeid",tP.getPropertyValue("nodeIdRTL"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetPem" id="92ea72c4-257d-4896-83dc-769bf76a4bc8"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep;
+import com.eviware.soapui.support.types.StringToStringMap 
+import soapUIUtils.soapUIUtils;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context) 
+//def certPath = groovyUtils.projectPath
+
+//Set fileKeyStorePath value 
+//log.info "certPath: "+certPath;
+//tP.setPropertyValue("certPath",""+certPath);
+
+tC.setPropertyValue("keyStorePath",null);
+
+def myTC = tP.getTestSuiteByName("CommonTestSteps").getTestCaseByName("SetPem")
+
+myTC.setPropertyValue("nodeId",tC.getPropertyValue("nodeId"));
+myTC.setPropertyValue("tName",tC.getName());
+myTC.setPropertyValue("sName",tS.getName());
+
+def runnerTC = myTC.run( null , false );
+assert runnerTC.status == Status.FINISHED;
+
+RestTestRequestStep testStep = tC.getTestStepByName("AccountCreate_HEAD");
+def keyStorePath = tC.getPropertyValue("keyStorePath");
+
+this.log.info "testStep [$testStep]";
+this.log.info "keyStorePathStep [$keyStorePath]";
+
+soapUtils = new soapUIUtils(log);
+soapUtils.setStepSSLSettingsKeyStore(testStep, keyStorePath);</script></con:config></con:testStep><con:properties><con:property><con:name>nodeid</con:name><con:value>RET</con:value></con:property><con:property><con:name>keyStorePath</con:name><con:value>C:/certs/RET_concat.pem</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_DECE_02006_AccountCreate_MTHD_API_Invocation_on_Q_HOST_Flaky_P2" searchProperties="true" id="da6e97cf-a5fd-4a6c-8d6a-4a0585ebd31b" disabled="true"><con:settings/><con:testStep type="groovy" name="Establish Test Case Properties" id="3d357a65-ae2a-4238-a9f9-efdfa05abcf5"><con:settings/><con:config><script>def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+tC.setPropertyValue("nodeid",tP.getPropertyValue("nodeIdRTL"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetPem" id="f3fd7f31-2bcb-4d0a-8032-78db0fb672b1"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep;
+import com.eviware.soapui.support.types.StringToStringMap 
+import soapUIUtils.soapUIUtils;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context) 
+//def certPath = groovyUtils.projectPath
+
+//Set fileKeyStorePath value 
+//log.info "certPath: "+certPath;
+//tP.setPropertyValue("certPath",""+certPath);
+
+tC.setPropertyValue("keyStorePath",null);
+
+def myTC = tP.getTestSuiteByName("CommonTestSteps").getTestCaseByName("SetPem")
+
+myTC.setPropertyValue("nodeId",tC.getPropertyValue("nodeId"));
+myTC.setPropertyValue("tName",tC.getName());
+myTC.setPropertyValue("sName",tS.getName());
+
+def runnerTC = myTC.run( null , false );
+assert runnerTC.status == Status.FINISHED;
+
+RestTestRequestStep testStep = tC.getTestStepByName("POST_AccCreate");
+def keyStorePath = tC.getPropertyValue("keyStorePath");
+
+this.log.info "testStep [$testStep]";
+this.log.info "keyStorePathStep [$keyStorePath]";
+
+soapUtils = new soapUIUtils(log);
+soapUtils.setStepSSLSettingsKeyStore(testStep, keyStorePath);</script></con:config></con:testStep><con:properties><con:property><con:name>nodeid</con:name><con:value>RET</con:value></con:property><con:property><con:name>keyStorePath</con:name><con:value>C:\ALL_CODES\Git\Certs\QALP1/RET_concat.pem</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_DECE_02007_AccountCreate_MTHD_API_Invocation_on_D_HOST_P2" searchProperties="true" id="af1ac872-ab61-4e73-91fd-59249de92072" disabled="true"><con:settings/><con:testStep type="groovy" name="Establish Test Case Properties" id="14d18e8d-eec9-4278-bb3a-7a96f86ab821"><con:settings/><con:config><script>def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+tC.setPropertyValue("nodeid",tP.getPropertyValue("nodeIdRTL"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetPem" id="8ae24e59-5e5e-42cb-9e87-bfce6999cb35"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep;
+import com.eviware.soapui.support.types.StringToStringMap 
+import soapUIUtils.soapUIUtils;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context) 
+//def certPath = groovyUtils.projectPath
+
+//Set fileKeyStorePath value 
+//log.info "certPath: "+certPath;
+//tP.setPropertyValue("certPath",""+certPath);
+
+tC.setPropertyValue("keyStorePath",null);
+
+def myTC = tP.getTestSuiteByName("CommonTestSteps").getTestCaseByName("SetPem")
+
+myTC.setPropertyValue("nodeId",tC.getPropertyValue("nodeId"));
+myTC.setPropertyValue("tName",tC.getName());
+myTC.setPropertyValue("sName",tS.getName());
+
+def runnerTC = myTC.run( null , false );
+assert runnerTC.status == Status.FINISHED;
+
+RestTestRequestStep testStep = tC.getTestStepByName("POST_AccCreate");
+def keyStorePath = tC.getPropertyValue("keyStorePath");
+
+this.log.info "testStep [$testStep]";
+this.log.info "keyStorePathStep [$keyStorePath]";
+
+soapUtils = new soapUIUtils(log);
+soapUtils.setStepSSLSettingsKeyStore(testStep, keyStorePath);</script></con:config></con:testStep><con:properties><con:property><con:name>nodeid</con:name><con:value>RET</con:value></con:property><con:property><con:name>keyStorePath</con:name><con:value>C:\ALL_CODES\Gits\Certs\QALP3LBS/RET_concat.pem</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_DECE_02008_AccountCreate_MediaType_application/xml;charset=utf-8" searchProperties="true" id="a64164b3-96fc-4f29-b6c0-8edc67b07caa" disabled="true"><con:settings/><con:testStep type="groovy" name="Establish Test Case Properties" id="83495ed5-920e-4832-9913-1ac683163f3b"><con:settings/><con:config><script>def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+tC.setPropertyValue("nodeid",tP.getPropertyValue("nodeIdRTL"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetPem" id="d2f1d381-479d-4a3a-ab54-134757edde9a"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep;
+import com.eviware.soapui.support.types.StringToStringMap 
+import soapUIUtils.soapUIUtils;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context) 
+//def certPath = groovyUtils.projectPath
+
+//Set fileKeyStorePath value 
+//log.info "certPath: "+certPath;
+//tP.setPropertyValue("certPath",""+certPath);
+
+tC.setPropertyValue("keyStorePath",null);
+
+def myTC = tP.getTestSuiteByName("CommonTestSteps").getTestCaseByName("SetPem")
+
+myTC.setPropertyValue("nodeId",tC.getPropertyValue("nodeId"));
+myTC.setPropertyValue("tName",tC.getName());
+myTC.setPropertyValue("sName",tS.getName());
+
+def runnerTC = myTC.run( null , false );
+assert runnerTC.status == Status.FINISHED;
+
+RestTestRequestStep testStep = tC.getTestStepByName("POST_AccCreate");
+def keyStorePath = tC.getPropertyValue("keyStorePath");
+
+this.log.info "testStep [$testStep]";
+this.log.info "keyStorePathStep [$keyStorePath]";
+
+soapUtils = new soapUIUtils(log);
+soapUtils.setStepSSLSettingsKeyStore(testStep, keyStorePath);</script></con:config></con:testStep><con:properties><con:property><con:name>nodeid</con:name><con:value>RET</con:value></con:property><con:property><con:name>keyStorePath</con:name><con:value>C:\ALL_CODES\Gits\Certs\QALP1/RET_concat.pem</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:properties><con:property><con:name>Country</con:name><con:value>US</con:value></con:property></con:properties><con:tearDownScript>if(context.expand( '${#Project#runTeardown}' )=='true')
+	{
+	log.info("Executing TearDown for Suite '" + testSuite.getName() + "'");
+	
+	for ( testCaseResult in runner.results )
+	{
+	   currentTestCaseName = testCaseResult.getTestCase().name;  
+	   currentTestCase = testCaseResult.getTestCase(); 
+	   log.info("Current TestCase : '"+ currentTestCaseName + "'");
+	   log.info("Current TestCase Status : '" + testCaseResult.getStatus().toString() + "'");
+	   
+	   if ( testCaseResult.getStatus().toString() == 'FAILED' )
+	   {
+	      log.info("Re-executing failed TC");
+	      def currentRunnerTC = currentTestCase.run(null, false);
+	      log.info("Status on re-execution : '" + currentRunnerTC.status + "'");
+	   }
+	}
+	log.info("Execution of TearDown for Suite '" + testSuite.getName() + "' Completed" );
+}</con:tearDownScript><con:reportParameters/></con:testSuite><con:testSuite id="bb2b1350-e500-4997-9b4b-aeccdc3a67e2" name="TestSuite 2"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e3a4226c-77c9-44eb-a826-1fe0e50f3af5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="OVERRIDE">https://qa.p.uvvu.com:7001/${#TestCase#endPoint}</con:endpoint></con:endpointStrategy><con:requirements/><con:properties><con:property><con:name>YOUTH_MIN_AGE</con:name><con:value>13</con:value></con:property><con:property><con:name>YOUTH_DOB_XML</con:name><con:value>yyyy-MM-dd</con:value></con:property><con:property><con:name>YOUTH_DOB</con:name><con:value>28-Jul-99</con:value></con:property><con:property><con:name>versionMinor</con:name><con:value>02</con:value></con:property><con:property><con:name>versionMajor</con:name><con:value>2015</con:value></con:property><con:property><con:name>userType</con:name><con:value>CHILD</con:value></con:property><con:property><con:name>Username</con:name><con:value>user20130726_035217</con:value></con:property><con:property><con:name>urnUser</con:name><con:value>urn:dece:userid:org:dece:</con:value></con:property><con:property><con:name>urntokenType_userpassword</con:name><con:value>urn:dece:type:tokentype:usernamepassword</con:value></con:property><con:property><con:name>urntokenType_saml</con:name><con:value>urn:dece:type:tokentype:saml2</con:value></con:property><con:property><con:name>urntokenType_deviceauthtoken</con:name><con:value>urn:dece:type:tokentype:DeviceAuthToken</con:value></con:property><con:property><con:name>urnNode</con:name><con:value>urn:dece:org:org:dece:</con:value></con:property><con:property><con:name>urnError</con:name><con:value>urn:dece:errorid:org:dece:</con:value></con:property><con:property><con:name>urnaccount</con:name><con:value>urn:dece:accountid:org:dece:</con:value></con:property><con:property><con:name>URLEncode</con:name><con:value>NO</con:value></con:property><con:property><con:name>TOUUrl</con:name><con:value>qa.c.uvvu.com:7001</con:value></con:property><con:property><con:name>TelephoneNumber</con:name><con:value>+1.703598741</con:value></con:property><con:property><con:name>targetUrlSHost</con:name><con:value>qa.s.uvvu.com:7001</con:value></con:property><con:property><con:name>targetURL</con:name><con:value>qa.p.uvvu.com:7001</con:value></con:property><con:property><con:name>targetSystem</con:name><con:value>LP1</con:value></con:property><con:property><con:name>targetPort_TOU</con:name><con:value>7001</con:value></con:property><con:property><con:name>targetPortq</con:name><con:value>7001</con:value></con:property><con:property><con:name>targetPortd</con:name><con:value>7001</con:value></con:property><con:property><con:name>targetPort</con:name><con:value>7001</con:value></con:property><con:property><con:name>targetHostS</con:name><con:value>qa.s.uvvu.com:7001</con:value></con:property><con:property><con:name>targetHostq</con:name><con:value>qa.q.uvvu.com</con:value></con:property><con:property><con:name>targetHostP</con:name><con:value>qa.p.uvvu.com:7001</con:value></con:property><con:property><con:name>targetHostd</con:name><con:value>qa.d.uvvu.com</con:value></con:property><con:property><con:name>targetHostC</con:name><con:value>qa.c.uvvu.com:7001</con:value></con:property><con:property><con:name>targetHostB</con:name><con:value>qa.b.uvvu.com:7001</con:value></con:property><con:property><con:name>targetHost</con:name><con:value>qa.p.uvvu.com</con:value></con:property><con:property><con:name>targetDeviceDomain</con:name><con:value>qa.d.uvvu.com:7001</con:value></con:property><con:property><con:name>targerHostd</con:name><con:value>qa.d.uvvu.com</con:value></con:property><con:property><con:name>SurName</con:name><con:value>user20130716_022720</con:value></con:property><con:property><con:name>StateOrProvince</con:name><con:value>VA</con:value></con:property><con:property><con:name>scriptsPath_Windows</con:name><con:value>../../GlobalScripts</con:value></con:property><con:property><con:name>scriptsPath_Linux</con:name><con:value>../../GlobalScripts</con:value></con:property><con:property><con:name>SAML2</con:name><con:value>SAML2 Assertion=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</con:value></con:property><con:property><con:name>SAML1</con:name><con:value>SAML2 Assertion=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</con:value></con:property><con:property><con:name>SAML</con:name><con:value>SAML2 Assertion=null</con:value></con:property><con:property><con:name>runTeardown</con:name><con:value>false</con:value></con:property><con:property><con:name>Rights_CID</con:name><con:value>urn:dece:cid:file:RTUPDATE_R3_EXAMPLE_CIDVersion_212395.txt</con:value></con:property><con:property><con:name>Rights_APID</con:name><con:value>urn:dece:apid:file:INTERACTIVE_MetadataDigitalCreate.txt:39983831</con:value></con:property><con:property><con:name>Rights_ALID</con:name><con:value>urn:dece:alid:file:RTUPDATE_R3_EXAMPLE_ALIDVersion_212395.txt</con:value></con:property><con:property><con:name>ResourceStatus</con:name><con:value/></con:property><con:property><con:name>Request_XML_Buffer</con:name><con:value><![CDATA[<User UserClass="urn:dece:role:user:class:${#TestCase#Privilege}" xmlns="${#Project#coordinatorSchema}" xmlns:ns2="http://www.movielabs.com/md" xmlns:ns3="http://www.w3.org/2000/09/xmldsig#" xmlns:ns4="http://www.w3.org/2001/04/xmlenc#"><Name><GivenName>${#Project#UserName}</GivenName><SurName>${#Project#UserName}</SurName></Name><ContactInfo><PrimaryEmail><Value>${#Project#PrimaryEmail}</Value></PrimaryEmail><AlternateEmail><Value>${#Project#AlternateEmail}</Value></AlternateEmail><Address><PostalAddress>${#Project#PostalAddress}</PostalAddress><PostalCode>${#Project#PostalCode}</PostalCode><Locality>${#Project#Locality}</Locality><StateOrProvince>${#Project#StateOrProvince}</StateOrProvince><Country>${#Project#Country}</Country></Address><TelephoneNumber><Value>${#Project#TelephoneNumber}</Value></TelephoneNumber><MobileTelephoneNumber><Value>${#Project#MobileTelephoneNumber}</Value></MobileTelephoneNumber></ContactInfo><Languages><Language>${#Project#Language1}</Language></Languages><DateOfBirth MeetsAgeOfMajority="${#TestCase#MeetsAgeOfMajority}">${#TestCase#DateOfBirth}</DateOfBirth>${#TestCase#LegalGuardian}<Credentials><Username>${#TestCase#UserName}</Username><Password>${#Project#password}</Password></Credentials><UserRecoveryTokens><RecoveryItem><QuestionID>${#Project#QuestionID1}</QuestionID><QuestionResponse>${#Project#QuestionResponse1}</QuestionResponse></RecoveryItem><RecoveryItem><QuestionID>${#Project#QuestionID2}</QuestionID><QuestionResponse>${#Project#QuestionResponse2}</QuestionResponse></RecoveryItem></UserRecoveryTokens></User>]]></con:value></con:property><con:property><con:name>Request_XML</con:name><con:value><![CDATA[<User UserClass="urn:dece:role:user:class:${#TestCase#Privilege}" xmlns="${#Project#coordinatorSchema}" xmlns:ns2="http://www.movielabs.com/md" xmlns:ns3="http://www.w3.org/2000/09/xmldsig#" xmlns:ns4="http://www.w3.org/2001/04/xmlenc#"><Name><GivenName>${#Project#UserName}</GivenName><SurName>${#Project#UserName}</SurName></Name><ContactInfo><PrimaryEmail><Value>${#Project#PrimaryEmail}</Value></PrimaryEmail><AlternateEmail><Value>${#Project#AlternateEmail}</Value></AlternateEmail><Address><PostalAddress>${#Project#PostalAddress}</PostalAddress><PostalCode>${#Project#PostalCode}</PostalCode><Locality>${#Project#Locality}</Locality><StateOrProvince>${#Project#StateOrProvince}</StateOrProvince><Country>${#Project#Country}</Country></Address><TelephoneNumber><Value>${#Project#TelephoneNumber}</Value></TelephoneNumber><MobileTelephoneNumber><Value>${#Project#MobileTelephoneNumber}</Value></MobileTelephoneNumber></ContactInfo><Languages><Language>${#Project#Language1}</Language></Languages><DateOfBirth MeetsAgeOfMajority="${#TestCase#MeetsAgeOfMajority}">${#TestCase#DateOfBirth}</DateOfBirth>${#TestCase#LegalGuardian}<Credentials><Username>${#TestCase#UserName}</Username><Password>${#Project#password}</Password></Credentials><UserRecoveryTokens><RecoveryItem><QuestionID>${#Project#QuestionID1}</QuestionID><QuestionResponse>${#Project#QuestionResponse1}</QuestionResponse></RecoveryItem><RecoveryItem><QuestionID>${#Project#QuestionID2}</QuestionID><QuestionResponse>${#Project#QuestionResponse2}</QuestionResponse></RecoveryItem></UserRecoveryTokens></User>]]></con:value></con:property><con:property><con:name>RandomPwdFlag</con:name><con:value/></con:property><con:property><con:name>QuestionResponse2</con:name><con:value>myname</con:value></con:property><con:property><con:name>QuestionResponse1</con:name><con:value>myname</con:value></con:property><con:property><con:name>QuestionID2</con:name><con:value>1650</con:value></con:property><con:property><con:name>QuestionID1</con:name><con:value>1200</con:value></con:property><con:property><con:name>Query_HostNameForProxy</con:name><con:value>https://uvqa-proxycache-elb-2009492071.us-west-2.elb.amazonaws.com:7001</con:value></con:property><con:property><con:name>Query_HostName</con:name><con:value>https://qa.q.uvvu.com:7001</con:value></con:property><con:property><con:name>Provision_HostName</con:name><con:value>https://qa.p.uvvu.com:7001</con:value></con:property><con:property><con:name>projectPath</con:name><con:value>C:\Users\rshrivastava\Desktop</con:value></con:property><con:property><con:name>Privilege</con:name><con:value>basic</con:value></con:property><con:property><con:name>PrimaryEmailConfirmationEndpoint</con:name><con:value>www.abc.com</con:value></con:property><con:property><con:name>PrimaryEmail</con:name><con:value>testing@uvvutesting.biz</con:value></con:property><con:property><con:name>PostalCode</con:name><con:value>20166</con:value></con:property><con:property><con:name>PostalAddress</con:name><con:value>46000 Center Oak Plaza</con:value></con:property><con:property><con:name>Policy_TOU</con:name><con:value>https://qa.c.uvvu.com:7001/Consent/Text/BE/urn:dece:type:policy:TermsOfUse:20140218/html</con:value></con:property><con:property><con:name>Policy_Class</con:name><con:value>urn%3Adece%3Atype%3Apolicy%3ATermsOfUse</con:value></con:property><con:property><con:name>password</con:name><con:value>testing</con:value></con:property><con:property><con:name>OrgID</con:name><con:value>ISC_R1</con:value></con:property><con:property><con:name>NODE_USER_ID_FULL</con:name><con:value>urn:dece:userid:org:dece:E528808A600535F3E0401F0A07996230</con:value></con:property><con:property><con:name>NODE_USER_ID1</con:name><con:value>E151F333D66812AFE0401F0A07996C63</con:value></con:property><con:property><con:name>NODE_USER_ID</con:name><con:value>E19F95D7CFC268C9E0401F0A079952C9</con:value></con:property><con:property><con:name>NODE_ACCOUNT_ID_FULL</con:name><con:value>urn:dece:accountid:org:dece:E528648B66BDACF7E0401F0A05994DAF</con:value></con:property><con:property><con:name>NODE_ACCOUNT_ID</con:name><con:value>E19F934C4E6BFA99E0401F0A05993DA2</con:value></con:property><con:property><con:name>nodeIdSPCLCS</con:name><con:value>dece:cs</con:value></con:property><con:property><con:name>nodeIdRTLCS2</con:name><con:value>RET_CS_2</con:value></con:property><con:property><con:name>nodeIdRTLCS1</con:name><con:value>RET_CS_1</con:value></con:property><con:property><con:name>nodeIdRTLCS</con:name><con:value>RET_CS_1</con:value></con:property><con:property><con:name>nodeIdRTL2</con:name><con:value>RET_2</con:value></con:property><con:property><con:name>nodeIdRTL1</con:name><con:value>sriniretailer</con:value></con:property><con:property><con:name>nodeIdRTL</con:name><con:value>RET</con:value></con:property><con:property><con:name>nodeIdRetailerforDeviceAuthToken</con:name><con:value/></con:property><con:property><con:name>nodeIdportalCS</con:name><con:value>iscportalcs1</con:value></con:property><con:property><con:name>nodeIdportal</con:name><con:value>iscportal1</con:value></con:property><con:property><con:name>nodeIdLLASPCS2</con:name><con:value>LLASP_CS_2</con:value></con:property><con:property><con:name>nodeIdLLASPCS</con:name><con:value>LLASP_CS_1</con:value></con:property><con:property><con:name>nodeIdLLASP2</con:name><con:value>LLASP_2</con:value></con:property><con:property><con:name>nodeIdLLASP</con:name><con:value>LLASP</con:value></con:property><con:property><con:name>nodeIdDSPCS2</con:name><con:value>DSP_CS_2</con:value></con:property><con:property><con:name>nodeIdDSPCS</con:name><con:value>DSP_CS_1</con:value></con:property><con:property><con:name>nodeIdDSP2</con:name><con:value>DSP_2</con:value></con:property><con:property><con:name>nodeIdDSP</con:name><con:value>DSP</con:value></con:property><con:property><con:name>nodeIdDLASPCS2</con:name><con:value>DLASP_CS_2</con:value></con:property><con:property><con:name>nodeIdDLASPCS</con:name><con:value>DLASP_CS_1</con:value></con:property><con:property><con:name>nodeIdDLASP2</con:name><con:value>DLASP_2</con:value></con:property><con:property><con:name>nodeIdDLASP</con:name><con:value>DLASP</con:value></con:property><con:property><con:name>nodeIdDEVCS2</con:name><con:value>DEV_CS_2</con:value></con:property><con:property><con:name>nodeIdDEVCS</con:name><con:value>DEV_CS_1</con:value></con:property><con:property><con:name>nodeIdDEV2</con:name><con:value>DEV_2</con:value></con:property><con:property><con:name>nodeIdDEV</con:name><con:value>DEV</con:value></con:property><con:property><con:name>nodeIdDECECS1</con:name><con:value>truststore-dece-cs</con:value></con:property><con:property><con:name>nodeIdDECECS</con:name><con:value>dece:cs</con:value></con:property><con:property><con:name>nodeIdDECE</con:name><con:value>DECE</con:value></con:property><con:property><con:name>nodeIdCoordCS</con:name><con:value>coord:cs</con:value></con:property><con:property><con:name>nodeIdCoo2</con:name><con:value>COO_2</con:value></con:property><con:property><con:name>nodeIdCoo</con:name><con:value>COO</con:value></con:property><con:property><con:name>nodeIdCONCS2</con:name><con:value>CON_CS_2</con:value></con:property><con:property><con:name>nodeIdCONCS</con:name><con:value>CON_CS_1</con:value></con:property><con:property><con:name>nodeIdCON2</con:name><con:value>CON_2</con:value></con:property><con:property><con:name>nodeIdCON</con:name><con:value>CON</con:value></con:property><con:property><con:name>nodeIdAccportalCS2</con:name><con:value>ACCESSCS_2</con:value></con:property><con:property><con:name>nodeIdAccportalCS</con:name><con:value>ACCESCS</con:value></con:property><con:property><con:name>nodeIdAccportal2</con:name><con:value>ACCESS_2</con:value></con:property><con:property><con:name>nodeIdAccportal</con:name><con:value>ACCESS</con:value></con:property><con:property><con:name>NODEACCID</con:name><con:value>E1AF78725D9E6410E0401F0A07997B12</con:value></con:property><con:property><con:name>MobileTelephoneNumber</con:name><con:value>+1.703598742</con:value></con:property><con:property><con:name>minUserName</con:name><con:value>6</con:value></con:property><con:property><con:name>MeetsAgeOfMajority</con:name><con:value>true</con:value></con:property><con:property><con:name>maxUserName</con:name><con:value>64</con:value></con:property><con:property><con:name>Locality</con:name><con:value>Sterling</con:value></con:property><con:property><con:name>Language2</con:name><con:value>de</con:value></con:property><con:property><con:name>Language1</con:name><con:value>en</con:value></con:property><con:property><con:name>JKSPassword</con:name><con:value>testing</con:value></con:property><con:property><con:name>JKSAliasName</con:name><con:value>qalp1</con:value></con:property><con:property><con:name>JDBCConnStr</con:name><con:value>jdbc:oracle:thin:@stdeqp-clu1-scan.va.neustar.com:2115/stdecqpdb_stdecqa.neustar.com</con:value></con:property><con:property><con:name>GivenName</con:name><con:value>user20130716_022720</con:value></con:property><con:property><con:name>GeoProfile</con:name><con:value>US</con:value></con:property><con:property><con:name>expectErrType</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>ExecutionPriority</con:name><con:value>P3,CHILD,CLG</con:value></con:property><con:property><con:name>eTag</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>envIdentifier</con:name><con:value>LP1</con:value></con:property><con:property><con:name>ENV</con:name><con:value>QALP1</con:value></con:property><con:property><con:name>encodedUserID</con:name><con:value/></con:property><con:property><con:name>enablePriorityScript</con:name><con:value>falsedisablePriority=P3,CHILD,CLG</con:value></con:property><con:property><con:name>enablePriority</con:name><con:value>true</con:value></con:property><con:property><con:name>DisplayName</con:name><con:value>accname_20141006_093454</con:value></con:property><con:property><con:name>DisplayImageURL</con:name><con:value/></con:property><con:property><con:name>disablePriority</con:name><con:value>P3,CHILD,CLG</con:value></con:property><con:property><con:name>Device_HostName</con:name><con:value>https://qa.d.uvvu.com:7001</con:value></con:property><con:property><con:name>DBUsername</con:name><con:value>DEQA1_APP</con:value></con:property><con:property><con:name>DBPassword</con:name><con:value>lp1db_23</con:value></con:property><con:property><con:name>DBIdentifier</con:name><con:value>LP1</con:value></con:property><con:property><con:name>DBHost</con:name><con:value>LP1</con:value></con:property><con:property><con:name>DateOfBirthXML</con:name><con:value>1999-07-19</con:value></con:property><con:property><con:name>DateOfBirth</con:name><con:value>1994-08-17</con:value></con:property><con:property><con:name>Country</con:name><con:value>US</con:value></con:property><con:property><con:name>coords</con:name><con:value>FALKY,COORD-10000,COORD-3034,COORD-2999,COORD-2509,COORD-627,UV-135,UV-340,Coord-2180</con:value></con:property><con:property><con:name>coordinatorSchema_21</con:name><con:value>http://www.decellc.org/schema/2013/10/coordinator</con:value></con:property><con:property><con:name>coordinatorSchema_11</con:name><con:value>http://www.decellc.org/schema/2013/10/coordinator</con:value></con:property><con:property><con:name>coordinatorSchema_07</con:name><con:value>http://www.decellc.org/schema/2013/06/coordinator</con:value></con:property><con:property><con:name>coordinatorSchema_06</con:name><con:value>http://www.decellc.org/schema/2012/12/coordinator</con:value></con:property><con:property><con:name>coordinatorSchema_02</con:name><con:value>http://www.decellc.org/schema/2015/03/coordinator</con:value></con:property><con:property><con:name>coordinatorSchema</con:name><con:value>http://www.decellc.org/schema/2015/03/coordinator</con:value></con:property><con:property><con:name>clusterNumber</con:name><con:value>1</con:value></con:property><con:property><con:name>CID</con:name><con:value>urn:dece:cid:file:A_File_Name_with_NUMBERS_740255950.txt</con:value></con:property><con:property><con:name>CHILD_MAX_AGE</con:name><con:value>12</con:value></con:property><con:property><con:name>CHILD_DOB_XML</con:name><con:value>2002-08-15</con:value></con:property><con:property><con:name>CHILD_DOB</con:name><con:value>27-Jul-02</con:value></con:property><con:property><con:name>certsPath_Windows</con:name><con:value>../../Certs/QALP1/</con:value></con:property><con:property><con:name>certsPath_Linux</con:name><con:value>../../Certs/QALP1/</con:value></con:property><con:property><con:name>CertMatchesNodeName</con:name><con:value>YES</con:value></con:property><con:property><con:name>CertMatchesNodeID</con:name><con:value>YES</con:value></con:property><con:property><con:name>cacheDuration</con:name><con:value>86400</con:value></con:property><con:property><con:name>Batch_HostName</con:name><con:value>https://qa.b.uvvu.com:7001</con:value></con:property><con:property><con:name>audience</con:name><con:value>urn:dece:org:org:dece:DEV_CS_1</con:value></con:property><con:property><con:name>assertionUID</con:name><con:value>E19E3D2D6A904D06E0401F0A05994A7A</con:value></con:property><con:property><con:name>APID</con:name><con:value>urn:dece:apid:file:AUDIO_MetadataDigitalCreate.txt:534576800</con:value></con:property><con:property><con:name>AlternateEmail</con:name><con:value>test_+126@uvvutesting.biz</con:value></con:property><con:property><con:name>ALID</con:name><con:value>urn:dece:alid:file:EXAMPLE_ALID_Version_241580697.txt</con:value></con:property><con:property><con:name>ADULT_MIN_AGE</con:name><con:value>18</con:value></con:property><con:property><con:name>ADULT_DOB_XML</con:name><con:value>1994-08-17</con:value></con:property><con:property><con:name>ADULT_DOB</con:name><con:value>29-Jul-94</con:value></con:property><con:property><con:name>account_oid</con:name><con:value>E608A05B1095BA3FE0401F0A059926D1</con:value></con:property><con:property><con:name>Streams_APID</con:name><con:value>urn:dece:apid:file:AUDIO_MetadataDigitalCreate.txt:242394094</con:value></con:property><con:property><con:name>Streams_ALID</con:name><con:value>urn:dece:alid:file:EXAMPLE_ALID_Version_561393521.txt</con:value></con:property><con:property><con:name>Streams_CID</con:name><con:value>urn:dece:cid:file:A_File_Name_with_NUMBERS_344946277.txt</con:value></con:property></con:properties><con:afterLoadScript/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:reportTemplates/><con:xmlTemplates/><con:parameters/></con:reporting><con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep"><con:script>if(testStepResult.getTestStep().config.type.toString() == "restrequest")
+{
+	byte [] tempByteArrRequest = testStepResult.getRawRequestData();
+	String tempRequest = new String(tempByteArrRequest);
+
+	log.info("-----------------------------&lt;" + testStepResult.getTestStep().getName() + " Request>--------------------------------");
+	log.info(tempRequest);
+	log.info("-----------------------------&lt;/" + testStepResult.getTestStep().getName() + " Request>--------------------------------");
+
+	byte [] tempByteArrResponse = testStepResult.getRawResponseData();
+	String tempResponse = new String(tempByteArrResponse);
+
+
+	log.info("-----------------------------&lt;" + testStepResult.getTestStep().getName() + " Response>--------------------------------");
+	log.info(tempResponse);
+	log.info("-----------------------------&lt;/" + testStepResult.getTestStep().getName() + " Response>--------------------------------");
+}</con:script></con:eventHandlers><con:eventHandlers type="TestSuiteRunListener.beforeTestCase" name="TestSuiteRunListener.beforeTestCase"><con:script>log.info("################################################################################");</con:script></con:eventHandlers><con:sensitiveInformation/></con:soapui-project>
