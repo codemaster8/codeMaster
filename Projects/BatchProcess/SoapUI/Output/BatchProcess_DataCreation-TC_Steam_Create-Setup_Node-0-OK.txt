@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 457
+Size: 0
+Timestamp: Fri Aug 29 11:27:38 EDT 2014
+TestStep: Setup_Node
+
+----------------- Messages ------------------------------

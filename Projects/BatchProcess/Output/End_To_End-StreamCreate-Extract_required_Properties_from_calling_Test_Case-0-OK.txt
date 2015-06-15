@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 11
+Size: 0
+Timestamp: Fri Aug 15 14:34:09 EDT 2014
+TestStep: Extract required Properties from calling Test Case
+
+----------------- Messages ------------------------------

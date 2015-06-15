@@ -1,0 +1,10 @@
+Status: FAILED
+Time Taken: 77
+Size: 0
+Timestamp: Wed Aug 27 15:05:38 EDT 2014
+TestStep: Extract Response Body and Headers
+Error:java.lang.NullPointerException: Cannot invoke method getAt() on null object
+
+----------------- Messages ------------------------------
+java.lang.NullPointerException: Cannot invoke method getAt() on null object
+error at line: 23

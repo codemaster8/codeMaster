@@ -1,0 +1,400 @@
+[33mcommit 234883e782d3e0b5fe29514bbdb6ccb3df8b8565[m
+Merge: f48e914 53d9292
+Author: Utkarsh <utkarsh.sinha@neustar.biz>
+Date:   Wed Mar 11 17:44:47 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit f48e91471877af583e79706452eae10808cdfe18[m
+Author: Utkarsh <utkarsh.sinha@neustar.biz>
+Date:   Wed Mar 11 17:39:11 2015 +0530
+
+    Updated COORD-2124 2 Scenarios
+
+[33mcommit 53d9292ae2a5366e9f1b9c974c6722df4e258462[m
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Tue Mar 10 14:48:23 2015 +0530
+
+    Updated Metadata projects
+
+[33mcommit 6cc14d6d95bd62149cc8436338c85d71754a7e24[m
+Author: Kalyan, Ineni <kalyan.ineni@neustar.biz>
+Date:   Tue Mar 10 00:33:00 2015 +0530
+
+    updated QALP2 properties file to run regresssion in LP2 - Interchanged org1 and org2 nodes
+
+[33mcommit 6cb1f51cb2d12d03e6634bbee21d1270706e3877[m
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Mon Mar 9 11:46:00 2015 +0530
+
+    updated DMRLease projects
+
+[33mcommit 7a06b33a00fd7f8dc6c107796b7c34b4c5175efa[m
+Merge: 239f4e2 d538fda
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Mon Mar 9 11:41:12 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit d538fda88a04ad5a7046203fa41d1d996de4570a[m
+Author: Kalyan, Ineni <kalyan.ineni@neustar.biz>
+Date:   Wed Mar 4 16:35:09 2015 +0530
+
+    updated STS Node Role TCs project for 2015/02 Project
+
+[33mcommit 50f28a381048f69edd5474030a8b10f08cd742ea[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Wed Mar 4 13:04:15 2015 +0530
+
+    Stream Service ON Updates and changes
+
+[33mcommit e681c44c07ae53c2cce6c5454b6135abb72e36f4[m
+Merge: 2b4894c a888290
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Tue Mar 3 20:46:49 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 2b4894cb5fa36431b90e58694ce30a8a2133e594[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Tue Mar 3 20:46:28 2015 +0530
+
+    Stream service updates for stream list view
+
+[33mcommit a888290b2d50016c641ab3bcbefc8a9eb3f302ba[m
+Author: rsrivast <ratanpriya.shrivastava@neustar.biz>
+Date:   Tue Mar 3 18:31:36 2015 +0530
+
+    adding updated rights token update UHD Project
+
+[33mcommit 6aae0b075078542a8511cd709757d65130ad8a5d[m
+Author: Utkarsh <utkarsh.sinha@neustar.biz>
+Date:   Tue Mar 3 16:34:34 2015 +0530
+
+    Added 2124 test cases.
+
+[33mcommit ea20004eeb6140bba72106c1bafc47e19a3f7d78[m
+Author: Meraj Khateeb <meraj.khateeb@neustar.com>
+Date:   Tue Mar 3 15:59:31 2015 +0530
+
+    COORD-155 PolicyList- Scenario 14
+    
+    Signed-off-by: Meraj Khateeb <meraj.khateeb@neustar.com>
+
+[33mcommit 239f4e298a9e387ee8733530442fa64ee673669a[m
+Merge: caefb34 688df4e
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Mon Mar 2 20:03:54 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 688df4e8a73f5d61023140d08ed8a2a13b9d9dfd[m
+Merge: cf6a90c 68d7436
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Mon Mar 2 16:17:39 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit cf6a90c9571d3486c118ff640f19d21144b80e76[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Mon Mar 2 16:16:14 2015 +0530
+
+    Stream service On changes
+
+[33mcommit 68d7436e6c584ea4cd2fb19ee680d834b707c541[m
+Author: rsrivast <ratanpriya.shrivastava@neustar.biz>
+Date:   Sun Mar 1 00:45:34 2015 +0530
+
+    adding updated 111 projects
+
+[33mcommit ede06ac42620ddcb86f3019567bceebe6b73d43c[m
+Merge: 3c68f68 76119b7
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Sat Feb 28 21:40:17 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 3c68f6805f4d83918e62e76cada52e6881ac2dc2[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Sat Feb 28 21:39:43 2015 +0530
+
+    Stream service On changes microservice
+
+[33mcommit 76119b71c875cf6fb1b49315347fdf66f2097718[m
+Author: rsrivast <ratanpriya.shrivastava@neustar.biz>
+Date:   Sat Feb 28 20:09:21 2015 +0530
+
+    adding updated rights projects
+
+[33mcommit 0bc40c4304d48b83125c3788c29c6014c174ac04[m
+Author: Meraj Khateeb <meraj.khateeb@neustar.com>
+Date:   Fri Feb 27 18:07:58 2015 +0530
+
+    Added scenarios for COORD-155 Policy List
+
+[33mcommit caefb347585a92051e12cadc8a84970816487516[m
+Merge: b7b10a6 6e8c274
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Fri Feb 27 12:46:34 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 6e8c274428b81773cb6483d2d921280796e5e777[m
+Author: “Sanjeet@194” <sanjeet.singh@neustar.biz>
+Date:   Thu Feb 26 14:30:27 2015 -0500
+
+    updated UVTC DTC project for coord-155 test cases
+
+[33mcommit 07a61472fcee86761d32a4d5b241077c5504dc4e[m
+Author: “Sanjeet@194” <sanjeet.singh@neustar.biz>
+Date:   Thu Feb 26 10:16:53 2015 -0500
+
+    updated Node Role TCs for STS Project
+
+[33mcommit b7b10a663f1ac8664ec1999254aded21eee618de[m
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Thu Feb 26 20:44:47 2015 +0530
+
+    updated DMR project
+
+[33mcommit eb14a912816f95c32f62500e6d986b91ed4c640c[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Thu Feb 26 20:42:17 2015 +0530
+
+    Stream service on fixes
+
+[33mcommit b449c6529e127ab2c98dcdfc3767a269b464530b[m
+Merge: 4db401f 380ebbb
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Thu Feb 26 20:38:55 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 4db401fddd8b53b9cfa206e249e3c073cc3bfafa[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Thu Feb 26 20:36:52 2015 +0530
+
+    Stream service ON fixes
+
+[33mcommit 380ebbbae71f8f58eedbbf7c301ea2d7168765d0[m
+Author: ankur surothia <ankur.surothia@neustar.biz>
+Date:   Thu Feb 26 15:30:32 2015 +0530
+
+    Pushing the Updated APID,ALID,CID in QALP1PC
+
+[33mcommit 5a8c5cb902bb179c93cf684e6a61524c99127958[m
+Author: ankur surothia <ankur.surothia@neustar.biz>
+Date:   Thu Feb 26 13:27:17 2015 +0530
+
+    Committing the 11/1 Endpoint Project A&U
+
+[33mcommit df924930e2fdc9094f65cc1b54838c288ddb13f4[m
+Author: rsrivast <ratanpriya.shrivastava@neustar.biz>
+Date:   Wed Feb 25 20:34:23 2015 +0530
+
+    removing missing policies
+
+[33mcommit 5af09847bd9c0f29a9cd48065c757d7e5022b326[m
+Author: Priya <Ratanpriya.shrivastava@neustar.biz>
+Date:   Wed Feb 25 09:06:56 2015 -0500
+
+    adding updated rights projects
+
+[33mcommit 4a53b816ea771b3a81bc10a2b322b9e094539f9e[m
+Merge: 1ab96db 84b0999
+Author: Priya <Ratanpriya.shrivastava@neustar.biz>
+Date:   Wed Feb 25 09:05:45 2015 -0500
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 1ab96db37af0ac09dac3d1a2aa6097a6f7ccc4dc[m
+Author: Priya <Ratanpriya.shrivastava@neustar.biz>
+Date:   Tue Feb 24 10:11:08 2015 -0500
+
+    adding updated 111projects
+
+[33mcommit 84b0999287ef881167378156dfab178d8c15c3bd[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Tue Feb 24 20:28:47 2015 +0530
+
+    Stream service On DB validation TC diabled
+
+[33mcommit 08a446a2884bb13327d56a1a79ef8f81a3253dd0[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Tue Feb 24 20:22:09 2015 +0530
+
+    Stream service On DB validation TC diabled
+
+[33mcommit c4dad7c4a23d6503f3abaa75ebbbd8956b33a2ea[m
+Merge: 52b9441 936cc79
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Tue Feb 24 20:17:28 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 52b94413eba6445327b629f2124daa201e022e8b[m
+Author: Sourabh Verma <sourabh.verma@neustar.biz>
+Date:   Tue Feb 24 20:17:01 2015 +0530
+
+    streamcreate DB validation TC disabled for Stream service ON
+
+[33mcommit 936cc79464748ab5daabd0f1d7cdb03a3e9f874d[m
+Author: ankur surothia <ankur.surothia@neustar.biz>
+Date:   Tue Feb 24 19:23:45 2015 +0530
+
+    Committing the SetPreference Script in AccountMerge,Cache and UVTC Primary email
+
+[33mcommit 6becd69dad19445b66598b8b269881a2f2eeca72[m
+Author: ankur surothia <ankur.surothia@neustar.biz>
+Date:   Tue Feb 24 18:49:51 2015 +0530
+
+    Commiting AccountMerge and UserUpdate
+
+[33mcommit 5e531b31ab1cd76b1cfce64acc0dc1a51ff4d353[m
+Author: Meraj Khateeb <meraj.khateeb@neustar.com>
+Date:   Tue Feb 24 18:19:07 2015 +0530
+
+    Merged test cases for COORD-155 (Discrete Policy API and PolicyList API)
+    
+    Signed-off-by: Meraj Khateeb <meraj.khateeb@neustar.com>
+
+[33mcommit e64a0f737c9dbc6198615a4e53e1490ba317ef92[m
+Author: Meraj Khateeb <meraj.khateeb@neustar.com>
+Date:   Tue Feb 24 18:06:30 2015 +0530
+
+    Added scenarios for COORD-155 (PolicyList APIs)
+    
+    Signed-off-by: Meraj Khateeb <meraj.khateeb@neustar.com>
+
+[33mcommit f97d4e733ffdfc474dd9462e88fab13096f4511d[m
+Merge: 119deca 17b6a39
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Tue Feb 24 17:59:46 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 119deca3b829edeb95e4e39b98599c04ff913fd6[m
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Tue Feb 24 17:58:57 2015 +0530
+
+    Stream Service ON changes for Stream view
+
+[33mcommit 17b6a39816c8567214127e765af395beaf5aaa4e[m
+Author: Priya <Ratanpriya.shrivastava@neustar.biz>
+Date:   Tue Feb 24 07:20:44 2015 -0500
+
+    adding updated projects for 2015/02
+
+[33mcommit cd3ec91bc29c8ac14bd9ec4c0f91b345af9668dd[m
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Tue Feb 24 17:37:49 2015 +0530
+
+    Disabled Db check tc's for Stream create and List and added Stream service ON Tcs
+
+[33mcommit 46ab399f8c84794b6ca4c9e8b034819db972cef8[m
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Tue Feb 24 12:37:08 2015 +0530
+
+    StreamDelete fixes for StreamService ON
+
+[33mcommit 235e22a3c31ab8b91fdaf2c7fbdd0c7db5fff3d6[m
+Merge: d7b8ef1 a3d96de
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Mon Feb 23 18:59:36 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit d7b8ef110b6cb9e1f60fabac79011b57658759e0[m
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Mon Feb 23 18:58:44 2015 +0530
+
+    Stream service On changes and update for StreamDelete project
+
+[33mcommit a3d96de47fe8f623bf4bb2329f30506eb15b1c9f[m
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Mon Feb 23 16:46:49 2015 +0530
+
+    Added cross endpoint scenarios
+
+[33mcommit 60185d39dcf178493c4a380322c7b3d67bd94e74[m
+Author: Meraj Khateeb <meraj.khateeb@neustar.com>
+Date:   Fri Feb 20 20:05:09 2015 +0530
+
+    Added scenarios for COORD-155
+    
+    Signed-off-by: Meraj Khateeb <meraj.khateeb@neustar.com>
+
+[33mcommit ceefebbe0cadd832d6d0f5eeb3133849a2987249[m
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Fri Feb 20 15:24:22 2015 +0530
+
+    updated DMR project to avoid DB dependencies
+
+[33mcommit 5921c52807377557a59b571ff8fe1b3301e12b81[m
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Fri Feb 20 12:33:19 2015 +0530
+
+    updated DMR projects to make compatible with DEV environment
+
+[33mcommit 9a234c2e88b0eef8cf5c5116bb289d1dd5fb048e[m
+Author: rsrivast <ratanpriya.shrivastava@neustar.biz>
+Date:   Thu Feb 19 20:11:49 2015 +0530
+
+    adding updated RT Update projects
+
+[33mcommit 43c6a9de3eb1ed802461d029cb4a089bd0d88495[m
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Thu Feb 19 19:37:27 2015 +0530
+
+    Stream Service On fixes for Stream delete and create
+
+[33mcommit 1fd6c9fff14bcb5c93a35d144edd747aa6dd10fb[m
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Thu Feb 19 11:44:46 2015 +0530
+
+    StreamService ON chnages for Delete
+
+[33mcommit 2b93a07ad39d0a91ca1d3af6d8b95f1729e88deb[m
+Merge: 830f33d 5a0f525
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Wed Feb 18 17:05:17 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 830f33d51e4dfaf7f8740acd508e80198a8a4172[m
+Merge: a349656 6856fab
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Wed Feb 18 16:51:23 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 5a0f525e7a68d96677a645cc7537b92cd75c45e7[m
+Merge: 6ee1c0f 6856fab
+Author: rsrivast <ratanpriya.shrivastava@neustar.biz>
+Date:   Wed Feb 18 16:47:41 2015 +0530
+
+    Merge branch 'master' of ssh://git.nexgen.neustar.biz:8022/dece/uv-coordinator-api-regression
+
+[33mcommit 6ee1c0f61b0226ea4d7cf672401f9ab708524a22[m
+Author: rsrivast <ratanpriya.shrivastava@neustar.biz>
+Date:   Wed Feb 18 16:47:13 2015 +0530
+
+    Adding Rights Modified projects
+
+[33mcommit a3496564d8882758a7c80ed01afecf616b9da16c[m
+Author: unknown <Sourabh.Verma@MVTL1074LT.Mvtechlabs.com>
+Date:   Wed Feb 18 16:45:47 2015 +0530
+
+    Stream service On fixes for 12 stream create issues
+
+[33mcommit 6856fab35aadf5adb7569d33dd53ba3ecff4770e[m
+Author: ankur surothia <ankur.surothia@neustar.biz>
+Date:   Wed Feb 18 16:44:41 2015 +0530
+
+    Committing account merge Setup Script changes and
+
+[33mcommit 73e0277d90e747bd9292af002854b4c78b45d394[m
+Author: Minashree Sahoo <minashree.sahoo@neustar.biz>
+Date:   Wed Feb 18 16:33:41 2015 +0530
+
+    updated properties file by adding DMR cid apid alid and bid

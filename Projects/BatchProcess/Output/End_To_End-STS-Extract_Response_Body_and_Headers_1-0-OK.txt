@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 36
+Size: 0
+Timestamp: Fri Aug 15 14:34:03 EDT 2014
+TestStep: Extract Response Body and Headers 1
+
+----------------- Messages ------------------------------

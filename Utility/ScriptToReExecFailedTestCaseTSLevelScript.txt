@@ -1,0 +1,27 @@
+def runTearDown = context.expand( '${#Project#RunTearDown}' )
+log.info("RunTearDown '" + runTearDown + "'");
+if(runTearDown.toString().toLowerCase() == "true"){
+	log.info("Tear Down is set to true");
+	log.info("Inside tearDown for Suite '" + testSuite.getName() + "'");
+	for ( testCaseResult in runner.results )
+	{
+		currentTestCaseName = testCaseResult.getTestCase().name;  
+		currentTestCase = testCaseResult.getTestCase(); 
+		log.info("Current TestCase : '"+ currentTestCaseName + "'");
+		log.info("Current TestCase Status : '" + testCaseResult.getStatus().toString() + "'");
+
+		if ( testCaseResult.getStatus().toString() == 'FAILED' )
+		{
+			log.info("Re-executing this failed TC");
+			def currentRunnerTC = currentTestCase.run(null, false);
+			log.info("Status on re-execution : '" + currentRunnerTC.status + "'");
+		}
+		else{
+			log.info("No Re-execution required.");
+		}
+	}
+	log.info("Out tearDown for Suite '" + testSuite.getName() + "'");
+}
+else{
+	log.info("Tear Down is set to false")
+}

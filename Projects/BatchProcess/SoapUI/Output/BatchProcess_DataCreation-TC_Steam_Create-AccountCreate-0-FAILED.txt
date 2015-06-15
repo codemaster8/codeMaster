@@ -1,0 +1,22 @@
+Status: FAILED
+Time Taken: 63546
+Size: 0
+Timestamp: Wed Aug 27 13:30:51 EDT 2014
+TestStep: AccountCreate
+Error:Assertion failed: 
+
+assert runnerTC.status == Status.FINISHED
+       |        |      |         |
+       |        FAILED false     FINISHED
+       com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner@44629153
+
+
+----------------- Messages ------------------------------
+Assertion failed: 
+
+assert runnerTC.status == Status.FINISHED
+       |        |      |         |
+       |        FAILED false     FINISHED
+       com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner@44629153
+
+error at line: 15

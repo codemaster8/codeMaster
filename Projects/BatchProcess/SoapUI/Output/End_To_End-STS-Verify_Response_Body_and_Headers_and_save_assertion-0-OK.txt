@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 82
+Size: 0
+Timestamp: Fri Aug 29 11:27:43 EDT 2014
+TestStep: Verify Response Body and Headers and save assertion
+
+----------------- Messages ------------------------------

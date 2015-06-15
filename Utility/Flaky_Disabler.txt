@@ -1,0 +1,44 @@
+//Project Level Variable name – FLAKYSELECTOR.
+//Possible Values – all, only_flaky, without_flaky
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+def counter=0;
+def tc_condition  = context.expand( '${#Project#FLAKYSELECTOR}' ).toString();
+
+tP.getTestSuiteList().each
+{
+      if(!it.getName().toLowerCase().contains("setup") && !it.isDisabled())
+       {
+                it.getTestCaseList().each
+         {
+                                   if(tc_condition.toLowerCase()=="all")
+                                                {
+                                it.setDisabled(false);
+                }
+             else if(tc_condition.toLowerCase()=="only_flaky")
+               {
+                  if(it.getName().toLowerCase().contains("flaky"))
+                                                {
+                                                                it.setDisabled(false);  
+                                                                counter=counter+1;
+                                                }
+                  else
+                         it.setDisabled(true);
+                }
+                else
+                {
+                   if(it.getName().toLowerCase().contains("flaky"))
+                                    {
+                                                                it.setDisabled(true);  
+                                              counter=counter+1;
+                                                                                 }
+                   else
+                                it.setDisabled(false); 
+                      
+                }
+           }
+        }
+}
+
+log.info  "##### FLAKY COUNT  for  "+tP.getName()+"  :   "+ counter;

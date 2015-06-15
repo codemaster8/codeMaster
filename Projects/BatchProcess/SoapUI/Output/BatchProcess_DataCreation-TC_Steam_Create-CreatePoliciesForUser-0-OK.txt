@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 2621
+Size: 0
+Timestamp: Fri Aug 29 11:27:43 EDT 2014
+TestStep: CreatePoliciesForUser
+
+----------------- Messages ------------------------------

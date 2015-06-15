@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 67
+Size: 0
+Timestamp: Fri Aug 15 14:34:08 EDT 2014
+TestStep: Extract RightsToken Request XML
+
+----------------- Messages ------------------------------
