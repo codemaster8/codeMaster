@@ -1,7 +1,0 @@
-Status: OK
-Time Taken: 12
-Size: 0
-Timestamp: Fri Aug 15 14:34:00 EDT 2014
-TestStep: Establish Test Case Properties
-
------------------ Messages ------------------------------

@@ -1,7 +1,0 @@
-Status: OK
-Time Taken: 28
-Size: 0
-Timestamp: Fri Aug 29 11:27:41 EDT 2014
-TestStep: Extract_Response_Headers
-
------------------ Messages ------------------------------

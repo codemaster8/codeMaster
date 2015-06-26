@@ -1,9 +1,0 @@
-#AcntUserSTSPolCreateNodeId,Audience				 ,Country,Language,TotalUsersToCreateCount,UserClassForEachUser,AccountGetNodeId,ExpectedHttpResponsePost,ExpectedHttpResponseGet,ExpectedHttpResponseGetFound
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,6               		,FAU-FAU-BAU-BAU-SAU-SAU ,nodeIdRTLCS       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,6               		,FAU-FAU-BAU-BAU-SAU-SAU ,nodeIdRTL       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,6               		,FAU-FAU-BAU-BAU-SAU-SAU ,nodeIdDECECS       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,6               		,FAU-FAU-BAU-BAU-SAU-SAU ,nodeIdCoordCS       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,1               		,FAU                     ,nodeIdRTLCS       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,1               		,FAU                     ,nodeIdRTL       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,1               		,FAU                     ,nodeIdDECECS       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found
-nodeIdRTL           	   ,nodeIdRTLCS-nodeIdDLASPCS,US     ,en      ,1              		,FAU                     ,nodeIdCoordCS       ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found

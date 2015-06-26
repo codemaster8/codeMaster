@@ -1,2 +1,0 @@
-#AcntUserSTSPolCreateNodeId,Audience				 ,Country,Language,TotalUsersToCreateCount,UserClassForEachUser,RightsTokenCreateNodeId,StreamCreateNodeId,ExpectedHttpResponsePost,ExpectedHttpResponseGet,ExpectedHttpResponseGetFound
-nodeIdRTL           	   ,nodeIdDLASPCS            ,US     ,en      ,1               		  ,FAU                 ,nodeIdRTL              ,nodeIdDLASPCS     ,HTTP/1.1 201 Created    ,HTTP/1.1 200 OK        ,HTTP/1.1 302 Found

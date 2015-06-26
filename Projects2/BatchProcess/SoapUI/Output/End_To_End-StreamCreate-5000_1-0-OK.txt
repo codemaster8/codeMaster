@@ -1,7 +1,0 @@
-Status: OK
-Time Taken: 5000
-Size: 0
-Timestamp: Fri Aug 29 11:29:07 EDT 2014
-TestStep: 5000 1
-
------------------ Messages ------------------------------
