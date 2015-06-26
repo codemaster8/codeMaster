@@ -1,0 +1,24 @@
+Status: FAILED
+Time Taken: 167
+Size: 0
+Timestamp: Fri Aug 15 16:14:47 EDT 2014
+TestStep: Verify the response headers and body
+Error:Assertion failed: 
+
+assert tC.getPropertyValue("httpStatus") == expectHTTPstatus
+       |  |                              |  |
+       |  HTTP/1.1 200 OK                |  HTTP/1.1 201 Created
+       |                                 false
+       com.eviware.soapui.impl.wsdl.WsdlTestCasePro@6f8e2c4e
+
+
+----------------- Messages ------------------------------
+Assertion failed: 
+
+assert tC.getPropertyValue("httpStatus") == expectHTTPstatus
+       |  |                              |  |
+       |  HTTP/1.1 200 OK                |  HTTP/1.1 201 Created
+       |                                 false
+       com.eviware.soapui.impl.wsdl.WsdlTestCasePro@6f8e2c4e
+
+error at line: 103

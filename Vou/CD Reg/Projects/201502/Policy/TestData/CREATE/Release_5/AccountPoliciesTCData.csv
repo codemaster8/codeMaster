@@ -1,0 +1,3 @@
+Policies_Account_1_Full_User_2,Policies_Account_1_Full_User_2,urn:dece:org:org:dece:ACCESCS,urn:dece:org:org:dece:ACCESCS,urn:dece:role:accessportal:customersupport,urn:dece:role:accessportal:customersupport,full,full,urn:dece:type:rating:US:Film:MPAA:G,US,Created
+Policies_Account_1_Standard_User_2,Policies_Account_1_Standard_User_2,urn:dece:org:org:dece:DECE,urn:dece:org:org:dece:DECE,urn:dece:role:dece,urn:dece:role:dece,standard,standard,urn:dece:type:rating:US:Film:MPAA:G,US,ForbiddenUserAccessToPolicyNotAuthorized
+Policies_Account_1_Basic_User_2,Policies_Account_1_Basic_User_2,urn:dece:org:org:dece:DECE,urn:dece:org:org:dece:DECE,urn:dece:role:dece,urn:dece:role:dece,basic,basic,urn:dece:type:rating:US:Film:MPAA:G,US,ForbiddenUserAccessToPolicyNotAuthorized

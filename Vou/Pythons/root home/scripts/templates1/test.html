@@ -1,0 +1,17 @@
+$def with(title,content)
+<html>
+<head>
+<title>$title</title>
+</head>
+<body>
+    <form name="form" method="GET">
+ 	 <table border=5 style="width:75%" CELLPADDING="4" CELLSPACING="3">
+	 <tr style="background-color:Aqua ;">
+	 <th> Name </th>
+         <th> URL Address </th>
+ 
+	$:content
+  	</table>
+    </form>
+</body>
+</html>

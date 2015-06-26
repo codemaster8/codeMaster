@@ -1,0 +1,8 @@
+/!/bin/sh
+echo "Hello World!" 
+# counte
+line=$(wc -l $1|cut -d" " -f1)
+echo $line;
+echo "File \"$1\" contains \
+exactly $line lines."
+exit 0

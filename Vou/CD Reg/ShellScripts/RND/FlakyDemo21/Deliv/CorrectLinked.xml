@@ -1,0 +1,43 @@
+import groovy.xml.StreamingMarkupBuilder
+
+
+
+def projectLocation= context.expand( '${#Project#ProjectLocation}' )
+log.info "PROCESSING LOCATION : " + projectLocation;
+new File(projectLocation).eachFileRecurse{ log.info it.name}
+
+new File(projectLocation).eachFileRecurse 
+{ 
+	if(it.toString().contains('.xml'))
+	{
+		def xmlFile=it.toString()
+		String fileContents = new File(xmlFile).text
+		log.info fileContents;
+		
+		def myXml= new XmlParser().parseText(fileContents)
+		myXml."con:testSuite".each
+		{
+			
+				log.info "#SUITE # " + it.@name
+				it."con:testCase".each
+				{
+					log.info "#case # " + it.@name;
+					if(it.@name.toString().contains("FLAKY"))
+					{
+						it.@disabled="true"
+						log.warn "DISABLING : " + it.@name
+					}
+				}
+		}
+	
+		def outputBuilder = new StreamingMarkupBuilder()
+		String updatedXml = outputBuilder.bind{ mkp.yield root }
+		log.info "updated XML : " +  updatedXml 
+		log.info "Printing FIle  : " + it
+		def writer = new FileWriter(it)
+		groovy.xml.XmlUtil.serialize( updatedXml, writer) 
+		//new XmlNodePrinter(new PrintWriter(new FileWriter(it))).print(updatedXml)
+			}
+	}
+	
+

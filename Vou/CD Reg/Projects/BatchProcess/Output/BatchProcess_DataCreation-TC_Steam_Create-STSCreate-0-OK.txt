@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 2463
+Size: 0
+Timestamp: Fri Aug 15 14:34:00 EDT 2014
+TestStep: STSCreate
+
+----------------- Messages ------------------------------

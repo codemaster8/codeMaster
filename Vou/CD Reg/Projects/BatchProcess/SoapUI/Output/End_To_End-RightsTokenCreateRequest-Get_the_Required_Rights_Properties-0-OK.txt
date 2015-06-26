@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 30
+Size: 0
+Timestamp: Fri Aug 29 11:27:46 EDT 2014
+TestStep: Get the Required Rights Properties
+
+----------------- Messages ------------------------------

@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 85
+Size: 0
+Timestamp: Fri Aug 15 14:34:03 EDT 2014
+TestStep: Deflate and encode the <Assertion>
+
+----------------- Messages ------------------------------

@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 9
+Size: 0
+Timestamp: Fri Aug 15 14:34:21 EDT 2014
+TestStep: Return the streamhandle
+
+----------------- Messages ------------------------------

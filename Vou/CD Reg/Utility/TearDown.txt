@@ -1,0 +1,20 @@
+if(context.expand( '${#Project#runTeardown}' )=='true')
+	{
+	log.info("Executing TearDown for Suite '" + testSuite.getName() + "'");
+	
+	for ( testCaseResult in runner.results )
+	{
+	   currentTestCaseName = testCaseResult.getTestCase().name;  
+	   currentTestCase = testCaseResult.getTestCase(); 
+	   log.info("Current TestCase : '"+ currentTestCaseName + "'");
+	   log.info("Current TestCase Status : '" + testCaseResult.getStatus().toString() + "'");
+	   
+	   if ( testCaseResult.getStatus().toString() == 'FAILED' )
+	   {
+	      log.info("Re-executing failed TC");
+	      def currentRunnerTC = currentTestCase.run(null, false);
+	      log.info("Status on re-execution : '" + currentRunnerTC.status + "'");
+	   }
+	}
+	log.info("Execution of TearDown for Suite '" + testSuite.getName() + "' Completed" );
+}

@@ -1,0 +1,26 @@
+
+def xmlFile="C:\\Users\\utkarsh.sinha\\Desktop\\FlakyDemo\\FlakyDemo.xml"
+String fileContents = new File(xmlFile).text
+//log.info fileContents;
+
+def myXml= new XmlParser().parseText(fileContents)
+myXml.each
+{Suites->
+	if(Suites.toString().contains('testSuite'))
+	{
+		
+		Suites.each
+		{cases->	
+			if(cases.toString().contains('testCase') && cases.toString().contains("FLAKY"))
+			{
+				cases.@disabled="true"
+				demo="##  " +  cases.@name +" "+ cases.@disabled;
+				log.info demo
+			}
+		}
+	}
+}
+
+
+new XmlNodePrinter(new PrintWriter(new FileWriter(xmlFile))).print(myXml)
+          

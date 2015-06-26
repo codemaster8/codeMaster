@@ -1,0 +1,7 @@
+Status: OK
+Time Taken: 10535
+Size: 0
+Timestamp: Fri Aug 29 11:28:51 EDT 2014
+TestStep: StreamCreate
+
+----------------- Messages ------------------------------

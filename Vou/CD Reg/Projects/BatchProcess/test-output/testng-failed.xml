@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="TestCases.BatchStreamInactive">
+        <methods>
+          <include name="validateStreamDataIsUpdated_test10"/>
+          <include name="validateStreamInactiveStart_test08"/>
+          <include name="getDatbaseInformation"/>
+          <include name="seperator"/>
+          <include name="validateStreamInactiveStop_test09"/>
+          <include name="SuiteLevelSetup"/>
+          <include name="SuiteLevelTeardown"/>
+        </methods>
+      </class> <!-- TestCases.BatchStreamInactive -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

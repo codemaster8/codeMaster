@@ -1,0 +1,46 @@
+Status: OK
+Time Taken: 853
+Size: 0
+Timestamp: Fri Aug 29 11:27:39 EDT 2014
+TestStep: Account_Create
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+StatusCode: 201
+Method: POST
+HTTP Version: HTTP/1.1
+Endpoint: https://qa.p.uvvu.com:7001
+URL: https://qa.p.uvvu.com:7001/rest/1/11/Account
+
+---------------- Request ---------------------------
+Host: [qa.p.uvvu.com:7001]
+Content-Length: [162]
+User-Agent: [Apache-HttpClient/4.1.1 (java 1.5)]
+Accept: [application/xml]
+Content-Type: [application/xml]
+Connection: [close]
+
+POST https://qa.p.uvvu.com:7001/rest/1/11/Account HTTP/1.1
+Connection: close
+Content-Type: application/xml
+Accept: application/xml
+Content-Length: 162
+Host: qa.p.uvvu.com:7001
+User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+
+<Account xmlns="http://www.decellc.org/schema/2013/10/coordinator"> 
+<DisplayName>Sanity_Acc_Create_20140829_112738</DisplayName>
+<Country>US</Country>
+</Account>
+
+---------------- Response --------------------------
+Vary: [Accept-Encoding]
+Date: [Fri, 29 Aug 2014 15:27:29 GMT]
+#status#: [HTTP/1.1 201 Created]
+Content-Length: [0]
+Location: [https://qa.q.uvvu.com:7001/rest/1/11/Account/urn:dece:accountid:org:dece:01C6EF746E1D739BE05307991F0A4989]
+Content-Type: [application/xml;charset=UTF-8]
+Connection: [close]
+x-Transaction-Info: [t=1409326050 VACb4QofmIgAAAxLN-IAAAA0 urn:dece:org:org:dece:RET 10.31.153.241]
+Server: [Apache]

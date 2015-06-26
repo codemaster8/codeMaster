@@ -1,0 +1,8 @@
+Status: OK
+Time Taken: 2
+Size: 0
+Timestamp: Fri Aug 29 11:29:02 EDT 2014
+TestStep: Steam OID
+
+----------------- Messages ------------------------------
+Script-result: C:\Batch_Process\BatchProcess\SteamInactive_Batch.txt

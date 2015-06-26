@@ -1,0 +1,41 @@
+import com.eviware.soapui.impl.wsdl.*;
+import com.eviware.soapui.impl.wsdl.teststeps.*;
+
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+
+def knownBugCommaSeparatedList = context.expand( '${#Project#coords}' )
+
+def knownBugsList = knownBugCommaSeparatedList.split(",");
+
+log.info("Get TestSuite List in project '" + tP.getName() + "'");
+def suiteList = tP.getTestSuiteList();
+
+log.info("Loop over Suite List!!! Start");
+
+for (int i = 0; i < suiteList.size(); i++) {
+	def currentTestSuite = suiteList.get(i);
+	log.info("Current Test Suite Name : '" + currentTestSuite.getName() + "'");
+	log.info("currentTestSuite.isDisabled() : '" + currentTestSuite.isDisabled()  + "'");
+
+	if( !currentTestSuite.isDisabled() ){
+		def testCaseList = currentTestSuite.getTestCaseList();
+
+		for (int j = 0; j < testCaseList.size(); j++) {
+
+			def  currentTestCase = testCaseList.get(j);
+			log.info("Current Test Case Name : '" + currentTestCase.getName());
+
+			for(int k=0; k < knownBugsList.size() ; k++){
+				if(currentTestCase.getName().toLowerCase().startsWith(knownBugsList[k].toLowerCase())){
+					log.info("Disable testcase");
+					currentTestCase.setDisabled(true);
+					log.info("TestCase disabled successfully");
+					break;
+				}
+				
+			}
+		}                      
+	}   
+}

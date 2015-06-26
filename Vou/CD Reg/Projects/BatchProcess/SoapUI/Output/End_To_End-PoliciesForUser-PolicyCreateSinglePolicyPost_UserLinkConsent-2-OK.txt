@@ -1,0 +1,63 @@
+Status: OK
+Time Taken: 237
+Size: 0
+Timestamp: Fri Aug 29 11:27:45 EDT 2014
+TestStep: PolicyCreateSinglePolicyPost_UserLinkConsent
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+StatusCode: 201
+Encoding: 
+Method: POST
+HTTP Version: HTTP/1.1
+Endpoint: https://qa.p.uvvu.com:7001
+URL: https://qa.p.uvvu.com:7001/rest/1/11/Account/urn:dece:accountid:org:dece:01C6EF746E1D739BE05307991F0A4989/User/urn:dece:userid:org:dece:01C74A9F94E44300E05305991F0AF0D8/Policy/urn:dece:type:policy:UserLinkConsent
+
+---------------- Request ---------------------------
+Authorization: [SAML2 Assertion=nVZdc+o4DP0rTPrIhHwQIMkUZigfLXuhtEDL3n3pGEeAIXFC7ADtr187QAq0dNn7lLEiS0fy8bFuGQp8060zBjEnIc1tA58yN7VWlSSmbogYYS5FATCXY3dY73Vds6C76LBFyXWaVeVtapeRAxWklipgqFZ54qmTiglqCZnlSbmESpWyJ1wZS6BDGUeUVxVTNyxVt1XTGRkl16y4RaNgG+Y/Su4VYiZiC5eCruxBbVlVmXMeuZq22WwKm2IhjGeaqeuG9nevO8RzCJBSu91VlCaKa3t/XPAAg+/jAg4D7VY78bn1mDskM4p4EsM+l3cpl67pjiZ8PEZmN0q2F7wOnYbpsoFoSAlGPvlAsj894PPQy9X9WRgTPg8uFmHoMrAKW6xiw6I3inYK7cpAJwhjhlQ2R8Y+1gCmEAPFkHsZdKrKzXWnlm4dxYiyaRgH7HT5//AAXYMfRuCp7FDWHtr1Ab/pVO0WsNuh2E8YWcOjJGuEMLD9aQK+PlTuKYYp2XYJEwTdMolOO4Z3ttx1o0lmwPifHNDR4eyCvCI/gRo8mN3K8zp6+v1SNsIt/GXkX9jS1kbzTTUFcOycGrKj3S3PSJmRaLdjWBqvZpPer7G25KXuTM8/eOPfm5GzZvU7Z9t8nQ86gTey24P7hXM/GZAFwa1Sgw/HD2jhtN6XaGHj6cO4rVuPqKkV43E0Hj52utaiZbYfJpPnu47GvdY7y4/pc/FXe5wfGFNz/FF2lkHQJ9w0+7RbZiXm++OXvkfN+95976m7pN5jb9Zv5jfzsP0S5ZHvWL1qVs4R/lPb4c4Pk8kCMD8sJQ06zVxbnBLiP4uZtBBPnaaubiTFh3GgXKnJXVI73ETIHfFccYa7tW40KlbdaTtWy7KKut7SS0W95DhGW6+39aZ9EJkdijOIjZBOicwlJXdHm58B4sBlQD2I1XWYCKVjyg8Rm4ijXIcOxCUIKYNRKOTZ0OMtKvvBdpXY3Cg7i3C24o5tfkRK7jHkfdqP61MO8ako2yeiPABMIgJSuSWxmWA246IZK7ROuG8U1qhAIRHaHkuZdU3LLmmMBJEPEqoWhF7iQyGaR2lrNLb7mirCLLUOWqP0ul0s7PzfoQfCxyPSgcla7kCcI3zzupiHQi4WbBrHBR/C1xOPyJslGspjgndITn998kQSJCNJs1sfPh1AZ77X7RXdeGsM34w/3/51p/ZDQdp5L7NE3pocpT28++IFEZpTOzBhhQqrQrJeJ+nZV6S2xiK8JiTW0IaAEyGJ76NwCVTLQmhXvT8Z6rPMmf0UX8LndMgRh0AwNZcurxg4hsDkwNERd2x77TRzklL0jcOWf2dr+GJYkoh/nKewi6WfMD+JzyaMPwv/LtZRHlGnmDc4oTO5km/P+wVS4FCEJUI1w/g4+HcBvkt+asyanGHhgk2ThMPlPzkph1UFYRwmlHeaSmo4lugUJ3+PwP10+hImfQWysZD891yokpQCGMQwyUgaX77uruQ/nR3J/D7pmdKXW+2KVW4ZzUrRuUuVvrJTesuxnawpJ+hqX8xfLUd9Oud47V8=]
+Host: [qa.p.uvvu.com:7001]
+Content-Length: [949]
+User-Agent: [Apache-HttpClient/4.1.1 (java 1.5)]
+Accept: [application/xml]
+Content-Type: [application/xml]
+Connection: [close]
+
+POST https://qa.p.uvvu.com:7001/rest/1/11/Account/urn:dece:accountid:org:dece:01C6EF746E1D739BE05307991F0A4989/User/urn:dece:userid:org:dece:01C74A9F94E44300E05305991F0AF0D8/Policy/urn:dece:type:policy:UserLinkConsent HTTP/1.1
+Connection: close
+Content-Type: application/xml
+Authorization: SAML2 Assertion=nVZdc+o4DP0rTPrIhHwQIMkUZigfLXuhtEDL3n3pGEeAIXFC7ADtr187QAq0dNn7lLEiS0fy8bFuGQp8060zBjEnIc1tA58yN7VWlSSmbogYYS5FATCXY3dY73Vds6C76LBFyXWaVeVtapeRAxWklipgqFZ54qmTiglqCZnlSbmESpWyJ1wZS6BDGUeUVxVTNyxVt1XTGRkl16y4RaNgG+Y/Su4VYiZiC5eCruxBbVlVmXMeuZq22WwKm2IhjGeaqeuG9nevO8RzCJBSu91VlCaKa3t/XPAAg+/jAg4D7VY78bn1mDskM4p4EsM+l3cpl67pjiZ8PEZmN0q2F7wOnYbpsoFoSAlGPvlAsj894PPQy9X9WRgTPg8uFmHoMrAKW6xiw6I3inYK7cpAJwhjhlQ2R8Y+1gCmEAPFkHsZdKrKzXWnlm4dxYiyaRgH7HT5//AAXYMfRuCp7FDWHtr1Ab/pVO0WsNuh2E8YWcOjJGuEMLD9aQK+PlTuKYYp2XYJEwTdMolOO4Z3ttx1o0lmwPifHNDR4eyCvCI/gRo8mN3K8zp6+v1SNsIt/GXkX9jS1kbzTTUFcOycGrKj3S3PSJmRaLdjWBqvZpPer7G25KXuTM8/eOPfm5GzZvU7Z9t8nQ86gTey24P7hXM/GZAFwa1Sgw/HD2jhtN6XaGHj6cO4rVuPqKkV43E0Hj52utaiZbYfJpPnu47GvdY7y4/pc/FXe5wfGFNz/FF2lkHQJ9w0+7RbZiXm++OXvkfN+95976m7pN5jb9Zv5jfzsP0S5ZHvWL1qVs4R/lPb4c4Pk8kCMD8sJQ06zVxbnBLiP4uZtBBPnaaubiTFh3GgXKnJXVI73ETIHfFccYa7tW40KlbdaTtWy7KKut7SS0W95DhGW6+39aZ9EJkdijOIjZBOicwlJXdHm58B4sBlQD2I1XWYCKVjyg8Rm4ijXIcOxCUIKYNRKOTZ0OMtKvvBdpXY3Cg7i3C24o5tfkRK7jHkfdqP61MO8ako2yeiPABMIgJSuSWxmWA246IZK7ROuG8U1qhAIRHaHkuZdU3LLmmMBJEPEqoWhF7iQyGaR2lrNLb7mirCLLUOWqP0ul0s7PzfoQfCxyPSgcla7kCcI3zzupiHQi4WbBrHBR/C1xOPyJslGspjgndITn998kQSJCNJs1sfPh1AZ77X7RXdeGsM34w/3/51p/ZDQdp5L7NE3pocpT28++IFEZpTOzBhhQqrQrJeJ+nZV6S2xiK8JiTW0IaAEyGJ76NwCVTLQmhXvT8Z6rPMmf0UX8LndMgRh0AwNZcurxg4hsDkwNERd2x77TRzklL0jcOWf2dr+GJYkoh/nKewi6WfMD+JzyaMPwv/LtZRHlGnmDc4oTO5km/P+wVS4FCEJUI1w/g4+HcBvkt+asyanGHhgk2ThMPlPzkph1UFYRwmlHeaSmo4lugUJ3+PwP10+hImfQWysZD891yokpQCGMQwyUgaX77uruQ/nR3J/D7pmdKXW+2KVW4ZzUrRuUuVvrJTesuxnawpJ+hqX8xfLUd9Oud47V8=
+Accept: application/xml
+Content-Length: 949
+Host: qa.p.uvvu.com:7001
+User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+
+<dece:PolicyList xsi:schemaLocation="http://www.decellc.org/schema dece.xsd" 
+xmlns:dece="http://www.decellc.org/schema/2013/10/coordinator" 
+xmlns:ds="http://www.w3.org/2000/09/xmldsig#" 
+xmlns:md="http://www.movielabs.com/md" 
+xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dece:Policy>
+      <dece:PolicyClass>urn:dece:type:policy:UserLinkConsent</dece:PolicyClass>
+      <dece:Resource>urn:dece:userid:org:dece:01C74A9F94E44300E05305991F0AF0D8</dece:Resource>
+      <dece:RequestingEntity>urn:dece:org:org:dece:DLASP</dece:RequestingEntity>
+      <dece:PolicyAuthority>urn:dece:org:org:dece:coordinator</dece:PolicyAuthority>
+      <dece:ResourceStatus>
+      <dece:Current CreatedBy="urn:dece:userid:org:dece:01C74A9F94E44300E05305991F0AF0D8">
+      <dece:Value>urn:dece:type:status:active</dece:Value>
+      </dece:Current>
+      </dece:ResourceStatus>
+</dece:Policy>
+</dece:PolicyList>
+
+---------------- Response --------------------------
+Vary: [Accept-Encoding]
+Date: [Fri, 29 Aug 2014 15:27:35 GMT]
+#status#: [HTTP/1.1 201 Created]
+Content-Length: [0]
+Location: [https://qa.q.uvvu.com:7001/rest/1/11/Account/urn:dece:accountid:org:dece:01C6EF746E1D739BE05307991F0A4989/User/urn:dece:userid:org:dece:01C74A9F94E44300E05305991F0AF0D8/Policy/urn:dece:type:policy:UserLinkConsent]
+Content-Type: [application/xml;charset=UTF-8]
+Connection: [close]
+x-Transaction-Info: [t=1409326055 VACb5wofmIgAAAxMOI4AAABE urn:dece:org:org:dece:DLASP 10.31.153.241]
+Server: [Apache]

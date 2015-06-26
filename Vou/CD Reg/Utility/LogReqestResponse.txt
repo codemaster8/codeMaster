@@ -1,0 +1,25 @@
+///////Added to TestRunListener.afterStep
+
+if(testStepResult.getTestStep().config.type.toString() == "restrequest")
+{
+	byte [] tempByteArrRequest = testStepResult.getRawRequestData();
+	String tempRequest = new String(tempByteArrRequest);
+
+	log.info("-----------------------------<" + testStepResult.getTestStep().getName() + "Request>--------------------------------");
+	log.info(tempRequest);
+	log.info("-----------------------------</" + testStepResult.getTestStep().getName() + "Request>--------------------------------");
+
+	byte [] tempByteArrResponse = testStepResult.getRawResponseData();
+	String tempResponse = new String(tempByteArrResponse);
+
+
+	log.info("-----------------------------<" + testStepResult.getTestStep().getName() + "Response>--------------------------------");
+	log.info(tempResponse);
+	log.info("-----------------------------</" + testStepResult.getTestStep().getName() + "Response>--------------------------------");
+
+log.info("################################################################################");
+
+}
+
+
+
