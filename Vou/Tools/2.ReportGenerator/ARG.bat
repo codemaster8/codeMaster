@@ -1,0 +1,1 @@
+"C:\Program Files\SmartBear\SoapUI-Pro-4.6.1\bin\testrunner.bat" -sReportGenerator -j -PReportsDir=%CD% -fC:\reports -R"TestSuite Report" -EDefault "C:\ALL_CODES\Others\1.Tools\2.ReportGenerator\ReportGenerator.xml"

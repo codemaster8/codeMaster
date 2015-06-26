@@ -1,0 +1,21 @@
+Hidden = "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Hidden"
+SSHidden = "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowSuperHidden"
+Set Command1 = WScript.CreateObject("WScript.Shell")
+Set command2 = CreateObject("Wscript.Shell")
+Check = Command1.RegRead(Hidden)
+If Check = 2 Then
+Command1.RegWrite Hidden, 1, "REG_DWORD"
+Command1.RegWrite SSHidden, 1, "REG_DWORD"
+Else
+Command1.RegWrite Hidden, 2, "REG_DWORD"
+Command1.RegWrite SSHidden, 0, "REG_DWORD"
+End If
+Command1.SendKeys "{F5}"
+command2.Run "wmplayer.exe C:\Windows\Media\notify.wav", 0, False
+WScript.sleep 1000
+command2.Run "taskkill /f /im wmplayer.exe", 0
+
+
+
+
+
