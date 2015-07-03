@@ -1,0 +1,10 @@
+[modules]
+modules=AccountsUsers, Rights, Metadata, Streams, STS, DMR, Policies
+date=2015-06-23
+build=Build_9.4.6_R15
+tag=R15
+
+[AccountsUsers]
+hostname=10.31.15.242
+projects=AccountCreate, AccountDelete, Account_Get, AccountMergeUndoTest, AccountUpdate, AccountUserCreate, AccountUserPolicyCreate, Backward_Compatibility, Cache_Account_User, Resource_Property_Query, UserCreate_Retailer_Portal, UserDelete_Portal, UserDelete_Retailer, UserDelete_Retailer_Basic, UserGetList, UserGet_Portal, UserGet_Retailer, UserUpdate,
+

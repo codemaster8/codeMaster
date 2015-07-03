@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f4f50bf6-07b0-489d-b7ac-3996fa44d888" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Disabler/Deleter" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:testStep type="groovy" name="FlakyDisabler" id="497f4c7a-917a-4f97-b7b1-b38e281dbbbd"><con:settings/><con:config><script>//Project Level Variable name – FLAKYSELECTOR.
+//Possible Values – all, only_flaky, without_flaky
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+def counter=0;
+def tc_condition  = context.expand( '${#Project#FLAKYSELECTOR}' ).toString();
+//tc_condition  = 'only_flaky'
+tP.getTestSuiteList().each
+{
+      if(!it.getName().toLowerCase().contains("setup") &amp;&amp; !it.isDisabled())
+       {
+                it.getTestCaseList().each
+         {
+                                   if(tc_condition.toLowerCase()=="all")
+                                                {
+                                it.setDisabled(false);
+                }
+             else if(tc_condition.toLowerCase()=="only_flaky")
+               {
+                  if(it.getName().toLowerCase().contains("flaky"))
+                                                {
+                                                                it.setDisabled(false);  
+                                                                counter=counter+1;
+                                                }
+                  else
+                         it.setDisabled(true);
+                }
+                else
+                {
+                   if(it.getName().toLowerCase().contains("flaky"))
+                                    {
+									it.setDisabled(true);  
+                                             counter=counter+1;
+	                                }
+                   else
+                                it.setDisabled(false); 
+                      
+                }
+           }
+        }
+}
+
+log.info  "##### FLAKY COUNT  for  "+tP.getName()+"  :   "+ counter;
+</script></con:config></con:testStep><con:testStep type="groovy" name="Disable Text" id="a60a9f04-e3c4-42da-9acc-34fd2ad62793"><con:settings/><con:config><script>//Project Level Variable name – FLAKYSELECTOR.
+//Possible Values – all, only_flaky, without_flaky
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+def counter=0;
+def tc_condition  = context.expand( '${#Project#FLAKYSELECTOR}' ).toString();
+
+tP.getTestSuiteList().each
+{
+      if(!it.getName().toLowerCase().contains("setup") &amp;&amp; !it.isDisabled())
+       {
+                it.getTestCaseList().each
+         {
+                             
+                   if(it.getName().toLowerCase().contains("- dece") || it.getName().toLowerCase().contains("- accessportal"))
+                            {
+							it.setDisabled(true);  
+                                   counter=counter+1;
+                            }
+                      
+		}
+        }
+}
+
+log.info  "##### Disabled COUNT  for  "+tP.getName()+"  :   "+ counter;
+testRunner.testCase.testSuite.project.save()</script></con:config></con:testStep><con:testStep type="groovy" name="DELeterByText" id="a6a2ce4a-8a6f-496c-8650-b4306a78097b"><con:settings/><con:config><script>//Project Level Variable name – FLAKYSELECTOR.
+//Possible Values – all, only_flaky, without_flaky
+def tC = testRunner.getTestCase();
+def tS = tC.getTestSuite();
+def tP = tS.getProject();
+def counter=0;
+String SelectText="CHILD";
+def setDisabled=true;
+def deleteMe=false; // set true to use delete functionality and 'false' to use disable / enable function
+//NOTE THAT
+//1. This will not run on disabled suite So enable all the suites that need processing before executing this
+
+
+tP.getTestSuiteList().each
+{
+      if(!it.getName().toLowerCase().contains("setup") &amp;&amp; ( !it.isDisabled()))
+       {
+                it.getTestCaseList().each
+         {
+                   if( it.getName().toLowerCase().contains(SelectText.toLowerCase()) )
+                            {
+							
+							if(deleteMe)
+							{
+								it.getTestSuite().removeTestCase(it)
+                                   	counter = counter + 1;
+							}
+							else
+							{
+								it.setDisabled(setDisablede);  
+                            		}
+                            }
+		}
+        }
+}
+
+log.info  "##### COUNT  for $SelectText in Project :"+tP.getName()+"  :   "+ counter;
+//testRunner.testCase.testSuite.project.save()</script></con:config></con:testStep><con:testStep type="groovy" name="Misc" id="616ecceb-f2aa-46bc-85b1-fa5d7a262481"><con:settings/><con:config><script>// For every SQL file in the provided ResultStepsPath, clone the template TestStep with the filename as TestStep name
+def tmpCloneTestCase = testRunner.testCase.testSuite.addNewTestCase("TemporaryCloneTestCase")
+new File(ResultSetsPath).eachFile
+{
+   // Ignore files that do not end in .sql
+   if (it.name.endsWith(".sql"))
+   {
+      // Make sure we can read the file
+      assert it.canRead()
+
+      // Get the new name for the testStep
+      String newStepName = it.name[0..-5]
+
+      // Clone the template TestStep
+      def newStep = ResultSetTemplateStep.clone(tmpCloneTestCase, newStepName)
+      newStep.setName(newStepName)
+      
+      // Update the query of the TestStep with the contents of the file
+      newStep.setQuery(it.text)
+
+      // Now clone the temporary testStep to the original testCase
+      newStep.clone(testRunner.testCase, newStepName)
+
+      // Remove the temporary testStep
+      tmpCloneTestCase.removeTestStep(newStep)
+   }
+}
+testRunner.testCase.testSuite.removeTestCase(tmpCloneTestCase)
+
+// Save the project
+assert testRunner.testCase.testSuite.project.save() == true</script></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>16cbb699-2acf-463e-aedc-4af87727a3e8</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
