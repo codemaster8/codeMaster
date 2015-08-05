@@ -1,0 +1,109 @@
+
+#!/bin/bash
+
+ExportRegRsltToFolder=`date +%Y-%m-%d`
+echo "Regression Result Folder - "$ExportRegRsltToFolder
+folderToExportResultsTo=''
+#Child Pids Array:
+child_pids=()
+
+createOrMoveRegRsltFolder(){
+  #echo "Inside function createOrMoveRegRsltFolder"
+  folderToExportResultsTo='/opt/dece/SoapUIReports/'$ExportRegRsltToFolder'/'$1'_'$2
+  if [ -d $folderToExportResultsTo ];
+  then
+    echo "!!!! Folder  exists: "$folderToExportResultsTo
+#               LM=`ls -ltr $folderToExportResultsTo'/..'| grep $1'$' | cut -d' ' -f9` #old implementation
+    LM=`date +%H-%M-%S`
+    echo "Renaming Folder : "$folderToExportResultsTo " To: "$folderToExportResultsTo '-'$LM
+    mv  $folderToExportResultsTo $folderToExportResultsTo'-'$LM
+    echo "Creating New Reports Folder: " $folderToExportResultsTo
+    mkdir -p $folderToExportResultsTo
+  else
+    echo "!!!! Folder $folderToExportResultsTo does NOT Exist....!!!"
+    echo "Creating New Reports Folder: " $folderToExportResultsTo
+    mkdir -p $folderToExportResultsTo
+  fi
+}
+
+startRegOnEndPoint(){
+  #echo "@@@@@ PASSED Args:  $1 $2 $3"
+  createOrMoveRegRsltFolder $2 $3
+  cd /home/QAUV/Desktop/Regression_BatchFiles/
+  rm -rf *~*
+  for i in *; do
+    if [[ "$i" == *"$3"* ]];
+    then
+      # Running the job in the background:
+      (nohup $(pwd)'/'$i $1 $2 $folderToExportResultsTo)&
+      # Saving the Child job PID into the array:
+      child_pids+=($!)
+      echo "Started a Regression Child process on PID: $!"
+    fi
+  done;
+}
+
+
+stop(){
+  echo "Quiting due to Invalid input arguments !!!!"
+  echo "Arguments passed - "$@
+  echo "**********Usage**************"
+  echo "./RUN_REGRESSION.sh QALP1 Build9.1.4 11 02"
+  echo "./RUN_REGRESSION.sh QALP3 Build9.1.4 11"
+  echo "./RUN_REGRESSION.sh QALP2 Build9.1.4 R15 R6 07"
+  echo "****************************"
+  exit 1;
+}
+rm -f GIT.log
+date >>GIT.log
+cd /opt/dece/GitRepo/uv-coordinator-api-regression
+ssh-add
+git clean -f -d >>GIT.log
+git reset --hard origin/master>>GIT.log
+git pull -f>>GIT.log
+
+echo "No of arguments passed - "$#
+
+Appender=BuildXXX
+
+if [[ "$@" == "" ]];
+then
+  echo "ABORTING :: Blank Argument Passed!!!!"
+  stop $@
+elif [ $# -le 1 ]
+then
+  echo "ABORTING :: NO. of Argument passed are <= 1"
+  stop $@
+elif [[ $1 != *QALP* ]]
+then
+  echo "ABORTING :: INVALID Environment argument PLEASE PASS 1st arguement  as ENV Variable Matching =>*QALP* PASSED => "$1
+  stop $@
+elif [[ $2 != *Build* ]]
+then
+  echo "ABORTING :: INVALID Build argument, PLEASE PASS 2nd arguement matching => *Build*   PASSED =>"$2
+  stop $@
+else
+  for var in "$@"
+  do
+    if [[ $var == *QALP* ]];
+    then
+      echo "SELECTED  Environment - "$var
+    elif [[ $var == *Build* ]];
+    then
+      Appender=$var
+    else
+      echo "EXECUTING  REGRESSION  [ENV : $1   BUILD: $Appender   END-POINT: $var]"
+      startRegOnEndPoint $1 $Appender $var
+    fi
+  done
+fi
+
+# Checking if all the jobs have completed:
+for child_pid in "${child_pids[@]}"; do
+  # Has the job by PID completed? if not wait for PID to complete:
+  if ps -p $child_pid >&-; then
+    echo "Waiting for child regression PID: $child_pid"
+    wait $child_pid
+        echo "Regression PID: $child_pid Exited with EXIT CODE : $?"
+  fi
+done
