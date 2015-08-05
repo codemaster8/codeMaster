@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>This Job is meant to Execute RIGHTS REGRESSION on 2015/02 end point</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.suryagaddipati.jenkins.SlaveUtilizationProperty plugin="slave-utilization-plugin@1.5">
+      <needsExclusiveAccessToNode>false</needsExclusiveAccessToNode>
+      <singleInstancePerSlave>false</singleInstancePerSlave>
+      <salveUtilizationPercentage>0</salveUtilizationPercentage>
+    </com.suryagaddipati.jenkins.SlaveUtilizationProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>ENV</name>
+          <description>To Choose Environment</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>QALP1</string>
+              <string>QALP1_ONLY_FLAKY</string>
+              <string>QALP1_WITH_FLAKY</string>
+              <string>QALP1PC</string>
+              <string>DEV</string>
+              <string>DEV2</string>
+              <string>QALP2</string>
+              <string>QALP3</string>
+              <string>QALP3ST</string>
+              <string>QALP3CH</string>
+              <string>QALP3LBS</string>
+              <string>QALP3LBSPC</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>IDENTIFIER</name>
+          <description>.. </description>
+          <defaultValue></defaultValue>
+        </hudson.model.TextParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>ProjectName</name>
+          <description>Please add project to RUN:</description>
+          <defaultValue>R6_UserDelete_Retailer</defaultValue>
+        </hudson.model.TextParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>MODULE</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>AccountUsers</string>
+              <string>Admin_API</string>
+              <string>Devices</string>
+              <string>DMR</string>
+              <string>DRM</string>
+              <string>LegacyDevice</string>
+              <string>Metadata</string>
+              <string>Policy</string>
+              <string>RSaml</string>
+              <string>RSU</string>
+              <string>Stream Reporting and DPL</string>
+              <string>Streams</string>
+              <string>STS</string>
+              <string>Rights</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>VersionMajor</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>1</string>
+              <string>2015</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>VersionMinor</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>11</string>
+              <string>02</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition plugin="extensible-choice-parameter@1.2.2">
+          <name>ProjectFile</name>
+          <description></description>
+          <editable>true</editable>
+          <choiceListProvider class="jp.ikedam.jenkins.plugins.extensible_choice_parameter.FilenameChoiceListProvider">
+            <baseDirPath>/opt/dece/GitRepo/uv-coordinator-api-regression/Projects</baseDirPath>
+            <includePattern>**/*.xml</includePattern>
+            <scanType>File</scanType>
+            <excludePattern></excludePattern>
+            <reverseOrder>false</reverseOrder>
+          </choiceListProvider>
+        </jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.21">
+      <autoRebuild>false</autoRebuild>
+    </com.sonyericsson.rebuild.RebuildSettings>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>master</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>/opt/dece/SoapUIReports/</customWorkspace>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>cd /opt/dece/GitRepo/uv-coordinator-api-regression
+
+git clean -f -d
+git reset --hard origin/master
+git pull -f
+
+cd /opt/dece/SmartBear/SoapUI-Pro-4.6.1/bin
+
+currentCOORDVer=`curl http://stdecqavap1.va.neustar.com:8081/healthcheck?pretty=true | grep -Po &quot;\d+.\d.\d-\d*&quot; | head -1`
+COORD_Ver=${currentCOORDVer}_${BUILD_NUMBER}
+
+BuildVersion=${COORD_Ver}_${IDENTIFIER}
+
+ENV=${ENV}
+MODULE=${MODULE}
+
+projectPath=&quot;/opt/dece/GitRepo/uv-coordinator-api-regression/Projects/${VersionMajor}${VersionMinor}/${MODULE}&quot;
+folderToExportResultsTo=&quot;/opt/dece/SoapUIReports/${MODULE}/${BuildVersion}&quot;
+versionMajor=${VersionMajor}
+versionMinor=${VersionMinor}
+soapuiSettingsFile=&apos;/home/QAUV/soapui-settings.xml&apos;
+
+mkdir -p $folderToExportResultsTo
+timeStampsFile=$folderToExportResultsTo&apos;/REGRESSION_TIMESTAMPS.log&apos;
+
+fileName=${ProjectName}
+echo $fileName&quot; Project Started at &quot;`date +&quot;%F::%H-%M-%S&quot;`&gt;&gt; $timeStampsFile
+project=$projectPath&apos;/&apos;$fileName&apos;.xml&apos;
+printf &quot;\033]0;REG ACC EXECUTING $fileName \007&quot;
+./testrunner.sh -r -j -f$folderToExportResultsTo&apos;/&apos;$fileName  -EDefault -I -Dsoapui.scripting.library=/opt/dece/GitRepo/uv-coordinator-api-regression/GlobalScripts/${MODULE} -PversionMajor=$versionMajor -PversionMinor=$versionMinor  -PENV=$ENV -t$soapuiSettingsFile -I  $project | tee -a $folderToExportResultsTo&apos;/&apos;$fileName.log
+echo $fileName&quot; Project Completed at &quot;`date +&quot;%F::%H-%M-%S&quot;`&gt;&gt; $timeStampsFile
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.15">
+      <recipients>utkarsh.sinha@neustar.biz  omkar.khtavkar@neustar.biz sourabh.verma@neustar.biz</recipients>
+      <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>${BUILD_NUMBER}...${ENV,var=&quot;ENV&quot;} -- ${ENV,var=&quot;MODULE&quot;}  ${ENV,var=&quot;VersionMajor&quot;} / ${ENV,var=&quot;VersionMinor&quot;} _ ${ENV,var=&quot;ProjectName&quot;} </template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+  </buildWrappers>
+</project>
