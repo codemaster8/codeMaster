@@ -68,7 +68,7 @@ echo "<td><b>$insti</b>-$assignee-$instId-<br>$myIp<br>$engineVersion</td>">>$my
 echo "<td>">>$myFile
 ############################# LOGGING 
 
-echo "Executing on INSITUTION : $insti   $myIp  $instId"  
+echo "Executing Get Institution Details on  INSITUTION : $insti   $myIp  $instId"  
 # GETTING WARS INSTALLED
 0</dev/null sshpass -p "D3wuN0?" ssh -o StrictHostKeyChecking=no -t -T servlet@$myIp cat  /LocalWeb/tomcat/instances/$insti/conf/server.xml| sed '/<!--.*-->/d' | sed '/<!--/,/-->/d'  |grep 'Context path'|cut -d'"' -f4|tee -a $myFile
 wars=$(tail -3 $myFile|grep -v common)

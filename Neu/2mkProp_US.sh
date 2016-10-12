@@ -41,7 +41,8 @@ echo "<a><font color =red> [CAUTION: For special characters please update as per
 Similarly for Urls escape all the forward slashes \"https:\/\/nms-qa2.nuancehce.com\/NMS\/Platform\/\"
 </a><br>">>$myFile 
 echo "<table border=2 bgcolor=#fffff style=font-size:13> <tbody>">>$myFile
-echo "Executing on INSITUTION : $insti   $myIp  $instId"  
+
+echo "Executing getProperties on INSITUTION : $insti   $myIp  $instId"  
 echo "<tr><td><b>Property</td>><td><b>Value</td></tr>">>$myFile
 0</dev/null sshpass -p "D3wuN0?" ssh -o StrictHostKeyChecking=no -t -T servlet@$myIp cat $propFile | grep -v "#"|egrep -v '^[[:space:]]*$'|sort |while read line;
 do

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="getEnginesProject" resourceRoot="" soapui-version="5.0.0" id="b5b57b28-1894-4803-aa07-44c15c680896" lastOpened="2016-10-12T13:32:14.764+05:30" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:testSuite name="testS" id="70b73e75-9b98-41a0-862d-3a8ee92aea44"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetEngines" searchProperties="true" id="299b0b4b-cc44-40e6-ba67-371d2d664e65">
+  <con:settings/>
+  <con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="createBlankFile" id="3af63147-50ee-46ea-a647-b4064f5cfe54"><con:settings/><con:config><script>def tC=testRunner.testCase
+if (System.properties['os.name'].toLowerCase().contains('windows')) {
+    log.info "it's Windows"
+    filePath="C:\\Temp\\"
+} else {
+    log.info "it's Unix"
+    filePath="/var/www/html/" 
+}
+
+tC.setPropertyValue("filePath",filePath)
+new File(filePath+File.separator+"engine.propertiesTemp").write("")</script></con:config></con:testStep>
+  
+  
+  
+  <con:testStep type="groovy" name="Executor" id="eadc8608-1832-42e7-b6b3-fe9f6ce9d6b6"><con:settings/><con:config><script>//def institution = context.expand( '${DataSource#institution}' )
+//
+def tC=testRunner.testCase
+/////////////////////////////
+def projectDir = context.expand('${projectDir}');
+def myInstis=new File("$projectDir/../myInstitution.csv").text.tokenize("\n")
+def instis = [];
+myInstis.each{
+			if(it.length()>1 &amp;&amp; !it.contains("QA Institutions "))
+				instis.add(it.tokenize(",")[0])
+	}
+log.error "Processing insti list for Engine-Details" + instis.toString()
+//////////////////////////////
+instis.each{
+tC.testSuite.project.setPropertyValue("institution",it)
+def temp=testRunner.testCase.testSteps["getEngineVersionJDBC"].run(testRunner, context)
+new File(tC.getPropertyValue("filePath")+File.separator+"engine.propertiesTemp").append(it+","+ context.expand( '${getEngineVersionJDBC#ResponseAsXml#//Results[1]/ResultSet[1]/Row[1]/VERSION[1]}' )+"\n")
+log.info "i n s t i t u t i o n  =  $it EngineVersion = " + context.expand( '${getEngineVersionJDBC#ResponseAsXml#//Results[1]/ResultSet[1]/Row[1]/VERSION[1]}' )
+}</script></con:config></con:testStep>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <con:testStep type="jdbc" name="getEngineVersionJDBC" id="7231ce1a-587a-4d1a-879c-766274c76424" disabled="true">
+    <con:settings/>
+    <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName xsi:nil="true"/>
+      <con:driver>${#Project#jdbc.driver}</con:driver>
+      <con:connectionString>${#Project#jdbc.url}</con:connectionString>
+      <con:query>select top 1 version from cludraftVisitVersion order by patientVisitID desc</con:query>
+      <con:properties/>
+    </con:config>
+  </con:testStep><con:testStep type="groovy" name="FinalizeFile" id="34c2427a-7fd0-4092-b630-afe851a0e0d2"><con:settings/><con:config><script>def tC=testRunner.testCase
+def tmpFile=new File(tC.getPropertyValue("filePath")+"engine.propertiesTemp")
+new File(tC.getPropertyValue("filePath")+File.separator+"engine.properties").write(tmpFile.text)
+log.info "Execution Ends############" 
+log.info "Written in file : " + tC.getPropertyValue("filePath")+"engine.properties"
+log.info "File contents: " + new File(tC.getPropertyValue("filePath")+"engine.properties").text</script></con:config></con:testStep><con:properties>
+    
+    
+    
+  <con:property><con:name>engineVersion</con:name><con:value>landc-install-escription-4.40.3</con:value></con:property><con:property><con:name>filePath</con:name><con:value>C:\Temp\</con:value></con:property></con:properties>
+  <con:reportParameters/>
+<con:breakPoints><con:testStepId>bf0553db-73ee-4bb9-a706-884b14750108</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>3af63147-50ee-46ea-a647-b4064f5cfe54</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>eadc8608-1832-42e7-b6b3-fe9f6ce9d6b6</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7231ce1a-587a-4d1a-879c-766274c76424</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties><con:property><con:name>activationTimeCACCE</con:name><con:value>2015-02-04T10:03:53</con:value></con:property><con:property><con:name>attachmentDir</con:name><con:value>${#Project#basedir}/data/</con:value></con:property><con:property><con:name>basedir</con:name><con:value>..</con:value></con:property><con:property><con:name>cacEngineType</con:name><con:value>ICD9_ICD10</con:value></con:property><con:property><con:name>checkFilesExist</con:name><con:value>N</con:value></con:property><con:property><con:name>Endpoint</con:name><con:value>https://${#Project#soapui.host.name}:${#Project#soapui.host.port}/</con:value></con:property><con:property><con:name>institution</con:name><con:value>clusdk4</con:value></con:property><con:property><con:name>jdbc.database</con:name><con:value>test_${#Project#institution}</con:value></con:property><con:property><con:name>jdbc.driver</con:name><con:value>com.microsoft.sqlserver.jdbc.SQLServerDriver</con:value></con:property><con:property><con:name>jdbc.host</con:name><con:value>10.56.24.74</con:value></con:property><con:property><con:name>jdbc.password</con:name><con:value>h9trs3GG</con:value></con:property><con:property><con:name>jdbc.url</con:name><con:value>jdbc:sqlserver://${#Project#jdbc.host};databaseName=${#Project#jdbc.database};user=${#Project#jdbc.user};password=${#Project#jdbc.password}</con:value></con:property><con:property><con:name>jdbc.user</con:name><con:value>jsrvpp</con:value></con:property><con:property><con:name>overrideWithLegacyVisit</con:name><con:value>false</con:value></con:property><con:property><con:name>soapui.auth.password</con:name><con:value>capd1</con:value></con:property><con:property><con:name>soapui.auth.user</con:name><con:value>capd1</con:value></con:property><con:property><con:name>soapui.host.importContextPath</con:name><con:value>${#Project#institution}/clu/cac/documentanalysis/management</con:value></con:property><con:property><con:name>soapui.host.managementContextPath</con:name><con:value>${#Project#institution}/clu/cac/visitanalysis/management</con:value></con:property><con:property><con:name>soapui.host.name</con:name><con:value>clu.nuancehce.com</con:value></con:property><con:property><con:name>soapui.host.port</con:name><con:value/></con:property><con:property><con:name>soapui.host.resolutionContextPath</con:name><con:value>${#Project#institution}/clu/cac/visitanalysis/resolution</con:value></con:property><con:property><con:name>ssh.host</con:name><con:value>10.56.27.206</con:value></con:property><con:property><con:name>ssh.password</con:name><con:value>nlpDevel0pment</con:value></con:property><con:property><con:name>ssh.port</con:name><con:value>22</con:value></con:property><con:property><con:name>ssh.username</con:name><con:value>cludev</con:value></con:property><con:property><con:name>testdata.engineJobFailedProcessingErrorDesc</con:name><con:value>Engine accepted job failed processing</con:value></con:property><con:property><con:name>testdata.engineJobSubmissionErrorDesc</con:name><con:value>The job was not accepted by the engine for processing</con:value></con:property><con:property><con:name>testdata.gender</con:name><con:value>F</con:value></con:property><con:property><con:name>testdata.originalPatientFirstName</con:name><con:value>John</con:value></con:property><con:property><con:name>testdata.originalPatientLastName</con:name><con:value>Doe</con:value></con:property><con:property><con:name>testdata.originalVisitType</con:name><con:value>Consultation</con:value></con:property><con:property><con:name>testdata.patientAdmissionAge</con:name><con:value>22</con:value></con:property><con:property><con:name>testdata.patientAdmissionDate</con:name><con:value>2012-06-21</con:value></con:property><con:property><con:name>testdata.patientAdmissionDateDB</con:name><con:value>2012-06-21 00:00:00.0</con:value></con:property><con:property><con:name>testdata.patientBirthDate</con:name><con:value>1990-05-04</con:value></con:property><con:property><con:name>testdata.patientBirthDateDB</con:name><con:value>1990-05-04 00:00:00.0</con:value></con:property><con:property><con:name>testdata.patientDischargeDate</con:name><con:value>2012-06-23</con:value></con:property><con:property><con:name>testdata.patientDischargeDateDB</con:name><con:value>2012-06-23 00:00:00.0</con:value></con:property><con:property><con:name>testdata.patientType</con:name><con:value>OUTPATIENT</con:value></con:property><con:property><con:name>testdata.patientTypeDB</con:name><con:value>OUTP</con:value></con:property><con:property><con:name>testdata.serviceDate</con:name><con:value>2012-06-22</con:value></con:property><con:property><con:name>testdata.serviceDateDB</con:name><con:value>2012-06-22 00:00:00.0</con:value></con:property><con:property><con:name>testdata.tempResolvedVisitFileName</con:name><con:value>tempResolvedVisit.xml</con:value></con:property><con:property><con:name>testdata.visit-processed-1-job.cavVersion</con:name><con:value>1</con:value></con:property><con:property><con:name>testdata.visit-processed-1-job.completedTime</con:name><con:value>2012-12-18T11:42:24.947</con:value></con:property><con:property><con:name>testdata.visit-processed-1-job.jobIdentifier</con:name><con:value>74421</con:value></con:property><con:property><con:name>testdata.visit-processed-1-job.jobType</con:name><con:value>DOCUMENT_EXTRACTING</con:value></con:property><con:property><con:name>testdata.visit-processed-1-job.startTime</con:name><con:value>2012-12-18T11:42:23.577</con:value></con:property><con:property><con:name>testdata.visit-processed-1-job.visitCode</con:name><con:value>soapUITestVisit-2</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-1-job.jobIdentifier</con:name><con:value>74530</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-1-job.jobType</con:name><con:value>DOCUMENT_EXTRACTING</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-1-job.startTime</con:name><con:value>2012-12-18T18:38:58.207</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-1-job.visitCode</con:name><con:value>soapUITestVisit-5</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-1.cavVersion</con:name><con:value>1</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-1.completedTime</con:name><con:value>2012-12-18T11:48:51.417</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-1.jobIdentifier</con:name><con:value>74427</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-1.jobType</con:name><con:value>DOCUMENT_EXTRACTING</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-1.startTime</con:name><con:value>2012-12-18T11:48:50.357</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-2.cavVersion</con:name><con:value>2</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-2.completedTime</con:name><con:value>2012-12-18T11:48:54.810</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-2.jobIdentifier</con:name><con:value>74428</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-2.jobType</con:name><con:value>DOCUMENT_EXTRACTING</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.complete-2.startTime</con:name><con:value>2012-12-18T11:48:53.783</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.incomplete-1.jobIdentifier</con:name><con:value>74429</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.incomplete-1.jobType</con:name><con:value>DOCUMENT_EXTRACTING</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.incomplete-1.startTime</con:name><con:value>2012-12-18T11:48:56.317</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.incomplete-2.jobIdentifier</con:name><con:value>74430</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.incomplete-2.jobType</con:name><con:value>DOCUMENT_EXTRACTING</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.incomplete-2.startTime</con:name><con:value>2012-12-18T11:48:58.847</con:value></con:property><con:property><con:name>testdata.visit-reprocessing-4-jobs.visitCode</con:name><con:value>soapUITestVisit-4</con:value></con:property><con:property><con:name>testdata.visitId</con:name><con:value>testVisit</con:value></con:property><con:property><con:name>testdata.visitId1</con:name><con:value>testVisit1</con:value></con:property><con:property><con:name>testdata.visitId2</con:name><con:value>testVisit2</con:value></con:property></con:properties><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:reportTemplates/><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/><con:authRepository/><con:tags/></con:soapui-project>
