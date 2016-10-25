@@ -1,0 +1,1 @@
+"C:\Program Files\SmartBear\SoapUI-Pro-5.0.0\bin\testrunner.bat" -Pinstitution=%1 -sTemplates -cmeditechSmoke -R"TestSuite Report" -EDefault C:\1Meditech\clu-tools-soapui\src\main\groovy\com\nuance\clu\qaAutomation\projects\muse\MUSE_Smoke

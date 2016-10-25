@@ -1,0 +1,45 @@
+echo off
+cls
+
+
+color 9
+set bakDir=D:\AutoBackup
+REM set bakDir=\\pun-srvfile01\Healthcare\xData\Backup\%Date:~-10,2%-%Date:~-7,2%-%Date:~-4,4%
+
+set srcDir=C:\Program Files\SmartBear\SoapUI-Pro-5.0.0\bin\scripts\com
+if not exist %bakDir% mkdir %bakDir%
+if not exist %bakDir%\Log_Files mkdir %bakDir%\Log_Files
+set logDir="%bakDir%\Log_Files\eagleBackup_%Date:~-10,2%-%Date:~-7,2%-%Date:~-4,4%.log"
+
+color C
+cls
+echo Source Directory: %srcDir%
+echo Backup Directory: %bakDir%
+REM #####Input Files
+echo Copying Input Files
+xcopy %srcDir%\Input_File\*.*   %bakDir%\Input_File\ /c /s /r /d /y /i>>%logDir%
+
+color 2
+
+REM #####Input Data
+echo Copying Input Data
+xcopy %srcDir%\Input_Data\*.* %bakDir%\Input_Data\ /c /s /r /d /y /i>>%logDir%
+
+
+color E
+
+REM #####Test Cases
+echo Copying Test Cases Scripts
+xcopy %srcDir%\New_WAGAutomation\TestCases\*.cs %bakDir%\Scripts\TestCases\ /c /s /r /d /y /i>>%logDir%
+
+color 9
+echo Copying Helper Classes Scripts
+REM #####Helper Classes
+xcopy %srcDir%\New_WAGAutomation\HelperClasses\*.cs %bakDir%\Scripts\HelperClasses\ /c /s /r /d /y /i>>%logDir%
+
+
+
+color A
+echo Backup Completed...!
+
+pause

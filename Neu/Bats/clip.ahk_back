@@ -1,0 +1,17 @@
+#Persistent
+return
+
+OnClipboardChange:
+
+ToolTip %clipboard%
+Sleep 1000
+
+StringSplit, path1, clipboard,:\
+ToolTip Setting in clipboard C:%path12%
+clipboard=C:%path12%
+Sleep 2000
+ToolTip ended
+Sleep 200
+ToolTip,  
+return
+

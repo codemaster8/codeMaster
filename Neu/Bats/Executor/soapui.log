@@ -1,0 +1,21 @@
+2016-04-18 15:51:54,467 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\utkarsh_sinha\soapui-settings.xml]
+2016-04-18 15:51:54,646 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [\\pun-srvfile01\Healthcare\xData\REPO\ENV_SETUP\clu-tools-soapui\src\main\groovy]
+2016-04-18 15:51:54,647 INFO  [DefaultSoapUICore] Adding listeners from [C:\Program Files\SmartBear\SoapUI-Pro-5.0.0\bin\listeners\demo-listeners.xml]
+2016-04-18 15:51:55,577 INFO  [WsdlProject] Loaded project from [file:////pun-srvfile01/Healthcare/xData/REPO/ENV_SETUP/clu-tools-soapui/src/main/groovy/com/nuance/clu/qaAutomation/projects/envSetup/envsetup-soapui-project/]
+2016-04-18 15:51:55,693 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [\\pun-srvfile01\Healthcare\xData\REPO\ENV_SETUP\clu-tools-soapui\src\main\groovy]
+2016-04-18 15:51:55,933 INFO  [SoapUIProTestCaseRunner] Setting project property [extractionOutputFormat] to [dev]
+2016-04-18 15:51:55,934 INFO  [SoapUIProTestCaseRunner] Setting project property [broker] to [off]
+2016-04-18 15:51:55,934 INFO  [SoapUIProTestCaseRunner] Setting project property [institution] to [[QA]
+2016-04-18 15:51:55,937 INFO  [SoapUIProTestCaseRunner] Setting project property [appWarVersion] to [Institutions]]
+2016-04-18 15:51:55,940 INFO  [SoapUIProTestCaseRunner] Setting project property [commonWarVersion] to [2.8.0-qa70]
+2016-04-18 15:51:55,942 INFO  [SoapUIProTestCaseRunner] Setting project property [security] to [Templates-clu360]
+2016-04-18 15:51:55,945 INFO  [SoapUIProTestCaseRunner] Setting project property [TomcatJava] to [epic]
+2016-04-18 15:51:55,948 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [envsetup-soapui-project]
+2016-04-18 15:51:55,951 ERROR [SoapUIProTestCaseRunner] java.lang.Exception: TestSuite with name [2.7.4-rc21] is missing in Project [envsetup-soapui-project]
+2016-04-18 15:51:55,953 ERROR [SoapUI] An error occurred [TestSuite with name [2.7.4-rc21] is missing in Project [envsetup-soapui-project]], see error log for details
+2016-04-18 15:51:55,960 ERROR [errorlog] java.lang.Exception: TestSuite with name [2.7.4-rc21] is missing in Project [envsetup-soapui-project]
+java.lang.Exception: TestSuite with name [2.7.4-rc21] is missing in Project [envsetup-soapui-project]
+	at com.eviware.soapui.tools.SoapUITestCaseRunner.runRunner(SoapUITestCaseRunner.java:363)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.run(AbstractSoapUIRunner.java:162)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.runFromCommandLine(AbstractSoapUIRunner.java:93)
+	at com.eviware.soapui.SoapUIProTestCaseRunner.main(SourceFile:58)

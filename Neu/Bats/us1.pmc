@@ -1,0 +1,35 @@
+﻿[PMC Code v5.0.3]|F3||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Macro1
+Groups=Start:1
+1|Left Move & Click|297, 113 Left, Down|1|0|Click|||||
+2|[Pause]||1|31|Sleep|||||
+3|Left Move & Click|305, 121 Left, Up|1|0|Click|||||
+4|WinActivate||1|333|WinActivate|| ahk_class WorkerW|||
+5|[Pause]||1|983|Sleep|||||
+6|Move|1394, 1204, 0|1|0|Click|||||
+7|LWin Down|{LWin Down}|1|0|Send|||||
+8|[Pause]||1|16|Sleep|||||
+9|Move|1394, 1202, 0|1|0|Click|||||
+10|[Pause]||1|31|Sleep|||||
+11|Move|1393, 1199, 0|1|0|Click|||||
+12|[Pause]||1|171|Sleep|||||
+13|r|{r}|1|0|Send|||||
+14|[Pause]||1|47|Sleep|||||
+15|Move|485, -53, 0|1|0|Click|||||
+16|[Pause]||1|16|Sleep|||||
+17|Move|161, 174, 0|1|0|Click|||||
+18|[Pause]||1|93|Sleep|||||
+19|WinActivate||1|0|WinActivate||Run ahk_class #32770|||
+20|LWin Up|{LWin Up}|1|0|Send|||||
+21|[Pause]||1|219|Sleep|||||
+22|Move|160, 173, 0|1|0|Click|||||
+23|[Pause]||1|499|Sleep|||||
+24|Move|159, 172, 0|1|0|Click|||||
+25|[Pause]||1|16|Sleep|||||
+26|Move|157, 172, 0|1|0|Click|||||
+27|[Pause]||1|31|Sleep|||||
+28|Move|155, 173, 0|1|0|Click|||||
+29|[Pause]||1|249|Sleep|||||
+30|Move|1063, 1425, 0|1|0|Click|||||
+31|WinActivate||1|0|WinActivate|| ahk_class WorkerW|||
+32|Escape|{Escape}|1|0|Send|||||
+

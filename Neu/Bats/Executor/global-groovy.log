@@ -1,0 +1,5 @@
+2016-01-04 12:50:51,656 INFO  [log] data folder is at C:\REPO\clu-tools\clu-tools-soapui\src\main\groovy/com/nuance/clu/qaAutomation/data/TestData/muse/deployEnv
+2016-01-04 12:50:51,676 INFO  [log] Begin test : deployEnv
+
+2016-01-04 12:50:51,678 INFO  [log] Test Run Folder: C:\clu-QAAutomation\envSetup\testResults\test-muse\Templates-muse\deployEnv_20160104_125051
+2016-01-04 12:50:51,684 INFO  [log] Updated Meta Data File List[]

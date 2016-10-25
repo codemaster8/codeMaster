@@ -1,0 +1,777 @@
+2016-05-31 16:21:29,205 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\utkarsh_sinha\soapui-settings.xml]
+2016-05-31 16:21:29,359 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [D:\DEVELOP\clu-tools-soapui\src\main\groovy]
+2016-05-31 16:21:29,360 INFO  [DefaultSoapUICore] Adding listeners from [C:\Program Files\SmartBear\SoapUI-Pro-5.0.0\bin\listeners\demo-listeners.xml]
+2016-05-31 16:21:30,535 INFO  [WsdlProject] Loaded project from [file:/C:/DEVELOP/clu-tools-soapui/src/main/groovy/com/nuance/clu/qaAutomation/projects/muse/MUSE_Smoke/]
+2016-05-31 16:21:30,601 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [D:\DEVELOP\clu-tools-soapui\src\main\groovy]
+2016-05-31 16:21:30,883 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [MuseSmoke]
+2016-05-31 16:21:30,905 INFO  [SoapUIProTestCaseRunner] Running TestCase [meditechSmoke]
+2016-05-31 16:21:30,917 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [meditechSmoke]
+2016-05-31 16:21:30,917 INFO  [SoapUIProTestCaseRunner] running step [Groovy Script 1]
+2016-05-31 16:21:31,170 INFO  [DefaultSoapUICore] Settings saved to [C:\Users\utkarsh_sinha\soapui-settings.xml]
+2016-05-31 16:21:31,176 INFO  [log] ######US############ Setting Script    Path: C:\DEVELOP\clu-tools-soapui\src\main\groovy\
+2016-05-31 16:21:31,178 INFO  [SoapUIProTestCaseRunner] running step [Driver]
+2016-05-31 16:21:33,978 INFO  [log] data folder is at C:\DEVELOP\clu-tools-soapui\src\main\groovy\/com/nuance/clu/qaAutomation/data/TestData/muse/meditechSmoke
+2016-05-31 16:21:33,996 INFO  [log] Begin test : meditechSmoke
+
+2016-05-31 16:21:33,998 INFO  [log] Test Run Folder: C:\clu-QAAutomation\nus\testResults\test\Templates\meditechSmoke_20160531_162133
+2016-05-31 16:21:34,076 INFO  [log] C:\DEVELOP\clu-tools-soapui\src\main\groovy\/com/nuance/clu/qaAutomation/data/TestData/muse/meditechSmoke\meditechMetadata.xml
+2016-05-31 16:21:34,364 INFO  [log] Updated Meta Data File List[C:\clu-QAAutomation\nus\testResults\test\Templates\meditechSmoke_20160531_162133\setup_meditechSmokeE-DESK0setupvc20160531.162133_Meta.xml]
+2016-05-31 16:21:34,366 INFO  [log] C:\DEVELOP\clu-tools-soapui\src\main\groovy\/com/nuance/clu/qaAutomation/data/TestData/muse/meditechSmoke\meditechMetadata.xml
+2016-05-31 16:21:34,589 INFO  [log] Default Product/Extract Configuration (muse/meditech):
+<?xml version="1.0"?>
+<test>
+	<cluProperties>
+	  <extractionOutputFormat>meditech</extractionOutputFormat>
+	  <dumpEngineInboundFiles>true</dumpEngineInboundFiles>
+	  <!--
+		 <imoService.URL>https://factextractor-uat.e-imo.com/dev1/</imoService.URL>
+		 <imoService.maxConnections>20</imoService.maxConnections>
+		 <imoService.requestTimeout>120000</imoService.requestTimeout>
+		 <imoService.connectionTimeout>30000</imoService.connectionTimeout>
+		 -->
+	</cluProperties>
+</test>
+
+2016-05-31 16:21:34,594 INFO  [log] Custom Configuration:
+<?xml version="1.0"?>
+<test>
+	<cluProperties>
+		<cacEngineType>ICD9_ICD10</cacEngineType>
+		<extractionOutputFormat>meditech</extractionOutputFormat>
+		<minimumConfidenceLevel>1</minimumConfidenceLevel>
+		<maxClarificationsLimit>3</maxClarificationsLimit>
+		<maxVisitClarificationsLimit>5</maxVisitClarificationsLimit>
+		<capdRestrictFiltering>TRUE</capdRestrictFiltering>
+	</cluProperties>
+	<setenv>
+		<JAVA_OPTS DdisableCluSecurity="false" Dlog4j.debug="true" />
+	</setenv>
+</test>
+2016-05-31 16:21:34,649 INFO  [log] Getting config files from server
+2016-05-31 16:21:34,655 INFO  [log] Get (/LocalWeb/properties/clucasqa1/clu.properties) from (clucasqa1)
+2016-05-31 16:21:43,817 INFO  [log] Get (/LocalWeb/tomcat/instances/clucasqa1/bin/setenv.sh) from (clucasqa1)
+2016-05-31 16:21:51,956 INFO  [log] Get (/LocalWeb/tomcat/instances/clucasqa1/conf/server.xml) from (clucasqa1)
+2016-05-31 16:22:00,073 INFO  [log] Get (/LocalWeb/properties/clucasqa1/tomcat/clu_log4j.xml) from (clucasqa1)
+2016-05-31 16:22:09,178 INFO  [log] Get (/LocalWeb/tomcat/instances/clucasqa1/conf/catalina.properties) from (clucasqa1)
+2016-05-31 16:22:17,587 INFO  [log] Get (/LocalWeb/tomcat/instances/clucasqa1/conf/context.xml) from (clucasqa1)
+2016-05-31 16:22:25,672 INFO  [log] Get (/LocalWeb/properties/clucasqa1/admin/clu.properties) from (clucasqa1)
+2016-05-31 16:22:33,734 INFO  [log] Get (/LocalWeb/tomcat/instances/clucasqa1/bin/catalina.sh) from (clucasqa1)
+2016-05-31 16:22:43,062 INFO  [log] Verifying Tomcat is running
+2016-05-31 16:22:43,064 INFO  [log] Check if tomcat is running on (clucasqa1)
+2016-05-31 16:22:46,836 INFO  [log] Catalina is running on clucasqa1 with PID 865
+2016-05-31 16:22:46,838 INFO  [log] Initializing Logs
+2016-05-31 16:22:46,841 INFO  [log] Initialize log files - clu-cas.log
+2016-05-31 16:22:58,724 INFO  [log] Initialize log files - clu-cas-summary.log
+2016-05-31 16:23:10,775 INFO  [log] Initialize log files - clu-cas-performance.log
+2016-05-31 16:23:22,586 INFO  [log] Initialize log files - clu-cas-admin.log
+2016-05-31 16:23:34,388 INFO  [log] Initialize log files - clu-cas-admin-performance.log
+2016-05-31 16:23:46,229 INFO  [log] Initialize log files - clu-cas-purge.log
+2016-05-31 16:23:58,113 INFO  [log] Initialize log files - clu-cas-purge-performance.log
+2016-05-31 16:24:10,003 INFO  [log] Initialize log files - catalina.out
+2016-05-31 16:24:21,898 INFO  [log] openSession - setup
+2016-05-31 16:24:21,928 INFO  [log] MEDITECH set IMO Authorization Header (NTNudWEyMjEyOW5jMjIyZQ==)
+2016-05-31 16:24:21,929 INFO  [log] openSession - execute
+2016-05-31 16:24:21,930 INFO  [SoapUIProTestCaseRunner] running step [openSession]
+2016-05-31 16:24:23,707 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/xop.xsd with targetNamespace http://www.w3.org/2004/08/xop/include
+2016-05-31 16:24:23,728 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/XMLSchema.xsd with targetNamespace http://www.w3.org/2001/XMLSchema
+2016-05-31 16:24:23,730 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/xml.xsd with targetNamespace http://www.w3.org/XML/1998/namespace
+2016-05-31 16:24:23,732 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/swaref.xsd with targetNamespace http://ws-i.org/profiles/basic/1.1/xsd
+2016-05-31 16:24:23,735 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/xmime200505.xsd with targetNamespace http://www.w3.org/2005/05/xmlmime
+2016-05-31 16:24:23,738 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/xmime200411.xsd with targetNamespace http://www.w3.org/2004/11/xmlmime
+2016-05-31 16:24:23,741 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/soapEnvelope.xsd with targetNamespace http://schemas.xmlsoap.org/soap/envelope/
+2016-05-31 16:24:23,745 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/soapEncoding.xsd with targetNamespace http://schemas.xmlsoap.org/soap/encoding/
+2016-05-31 16:24:23,748 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/soapEnvelope12.xsd with targetNamespace http://www.w3.org/2003/05/soap-envelope
+2016-05-31 16:24:23,757 INFO  [SchemaUtils] Added default schema from file:/C:/Program%20Files/SmartBear/SoapUI-Pro-5.0.0/lib/soapui-5.0.0.jar!/com/eviware/soapui/resources/xsds/soapEncoding12.xsd with targetNamespace http://www.w3.org/2003/05/soap-encoding
+2016-05-31 16:24:23,758 INFO  [SchemaUtils] Loading schema types from [https://hce.escriptionasp.com://Sarasota/clu/sdk/session/clu-session.wsdl]
+2016-05-31 16:24:23,760 INFO  [SchemaUtils] Getting schema https://hce.escriptionasp.com://Sarasota/clu/sdk/session/clu-session.wsdl
+2016-05-31 16:24:23,770 INFO  [SchemaUtils] Getting schema https://hce.escriptionasp.com://Sarasota/clu/sdk/session/clu-session-webservice.xsd
+2016-05-31 16:24:23,772 INFO  [SchemaUtils] Getting schema https://hce.escriptionasp.com://Sarasota/clu/sdk/session/clu-request.xsd
+2016-05-31 16:24:23,963 INFO  [log] openSession - set authHeader to all requests ([Cookie:[A=rO0ABXNyADBjb20ubnVhbmNlLmNsdS5zZXJ2aWNlcy5zZWN1cml0eS5DbGllbnRQcmluY2lwYWwAAAAAAAAAAgMABkkACGNsaWVudElkSQAOZXhwaXJhdGlvblRpbWVMABNjdXN0b21lckxpY2Vuc2VHdWlkdAASTGphdmEvbGFuZy9TdHJpbmc7TAAIcGFzc3dvcmRxAH4AAUwACXF1YWxpZmllcnEAfgABTAAJdXNlckxvZ2lucQB+AAF4cDuazZ8BdH66dAAkMEE5QkY5N0UtMTIwNy00OTRBLThDN0QtNkQwM0MwNjIzN0QycHB0AAltdXNlVXNlcjJ4; Path=/clucasqa1/clu; Secure], Authorization:[License bXVzZVVzZXIyOjBBOUJGOTdFLTEyMDctNDk0QS04QzdELTZEMDNDMDYyMzdEMg==], IMO-Authorization:[NTNudWEyMjEyOW5jMjIyZQ==]])
+2016-05-31 16:24:23,965 INFO  [log] openSession - set authHeader for request (openSession)
+2016-05-31 16:24:23,967 INFO  [log] openSession - set authHeader for request (processDocument)
+2016-05-31 16:24:24,000 INFO  [log] ===============================[api:processDocument]
+2016-05-31 16:24:24,002 INFO  [log] INFO : -------------------------------------------------------------------------------------------------------------
+2016-05-31 16:24:24,003 INFO  [log] INFO : Run Process Document
+2016-05-31 16:24:24,004 INFO  [log] INFO : External ID for  processDoc is ext_processDoc_2016-05-31T16-24-23-987
+2016-05-31 16:24:24,007 INFO  [log] INFO : Document type for  processDoc is ORIGINAL
+2016-05-31 16:24:24,008 INFO  [log] INFO : Visit Code for  processDoc is meditechSmokeE-DESK0setupvc20160531.162133
+2016-05-31 16:24:24,009 INFO  [log] INFO : -------------------------------------------------------------------------------------------------------------
+2016-05-31 16:24:24,010 INFO  [log] INFO : Removing old attachments
+2016-05-31 16:24:24,017 INFO  [log] INFO : Attach metadata file : C:\clu-QAAutomation\nus\testResults\test\Templates\meditechSmoke_20160531_162133\setup_meditechSmokeE-DESK0setupvc20160531.162133_Meta.xml
+2016-05-31 16:24:24,039 INFO  [log] INFO : Attach doc file : C:\clu-QAAutomation\nus\testResults\test\Templates\meditechSmoke_20160531_162133\meditech-accept-9721.xml
+2016-05-31 16:24:24,051 INFO  [SoapUIProTestCaseRunner] running step [processDocument]
+2016-05-31 16:24:24,122 INFO  [SchemaUtils] Loading schema types from [https://hce.escriptionasp.com://Sarasota/clu/capd/documentanalysis/import/clu-importDetail.wsdl]
+2016-05-31 16:24:24,122 INFO  [SchemaUtils] Getting schema https://hce.escriptionasp.com://Sarasota/clu/capd/documentanalysis/import/clu-importDetail.wsdl
+2016-05-31 16:24:24,128 INFO  [SchemaUtils] Getting schema https://hce.escriptionasp.com://Sarasota/clu/capd/documentanalysis/import/clu-importDetail-webservice.xsd
+2016-05-31 16:24:24,132 INFO  [SchemaUtils] Getting schema https://hce.escriptionasp.com://Sarasota/clu/capd/documentanalysis/import/clu-datatypes.xsd
+2016-05-31 16:24:24,133 INFO  [SchemaUtils] Getting schema https://hce.escriptionasp.com://Sarasota/clu/capd/documentanalysis/import/clu-request.xsd
+2016-05-31 16:24:28,937 INFO  [log] INFO : processDoc : processDocument completed successfully
+2016-05-31 16:24:28,941 INFO  [log] Test Step Status = [operation:processDoc, API:processDocument, Step_Execution_Status:OK, HTTP_Response_Status:[HTTP/1.1 200 OK], Request_Attachments:[setup_meditechSmokeE-DESK0setupvc20160531.162133_Meta.xml; meditech-accept-9721.xml], Result:processDocument completed successfully]
+2016-05-31 16:24:28,947 INFO  [log] INFO : -------------------------------------------------------------------------------------------------------------
+2016-05-31 16:24:28,949 INFO  [log] INFO : processDoc : cluDocumentId from processDocument Response: 20101
+2016-05-31 16:24:28,950 INFO  [log] INFO : Retrieving returned File
+2016-05-31 16:24:28,954 INFO  [log] INFO : Decoding File
+2016-05-31 16:24:28,957 INFO  [log] INFO : Writing Decoded File to Run DirectoryC:\clu-QAAutomation\nus\testResults\test\Templates\meditechSmoke_20160531_162133\processDoc_ReturnedFile.xml
+2016-05-31 16:24:29,196 INFO  [log] INFO : DB Query to fetch appXml path for MUSE
+2016-05-31 16:24:29,197 INFO  [log] INFO : 
+		select '/' + fsr.path + '/' + cdd.applicationFilename as appXml,  '/' + fsr2.path + '/' + ead.Filename as antXml
+		from cluDraftDocument cdd
+		inner join fileServerRoot fsr
+		on cdd.applicationRootID = fsr.rootID
+		inner join exportedAnnotatedDocument ead
+		on ead.cluDocumentId = cdd.cluDocumentId
+		inner join fileServerRoot fsr2
+		on ead.RootID = fsr2.rootID
+		where  cdd.cluDocumentId = '20101'
+		
+
+2016-05-31 16:24:31,647 INFO  [log] connected to database
+2016-05-31 16:24:32,388 INFO  [log] INFO : [[appXml://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cludraft/clucasqa1/2016053106/581/1/20101/20101.app, antXml://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cluExported/clucasqa1/ExportedAnnotatedDocuments/2016_05_31/2794_20101_20160531065426000995.xml], 
+]
+2016-05-31 16:24:32,390 INFO  [log] Database connection is closed
+2016-05-31 16:24:32,395 INFO  [log] INFO : retrieving App Xml File AppXml.xml
+2016-05-31 16:24:32,396 INFO  [log] INFO : Attempting to retrieve file - App Xml
+2016-05-31 16:24:40,591 INFO  [log] INFO : Attempting to retrieve file - Ant Xml
+2016-05-31 16:24:56,493 INFO  [log] imoXmlPathQuery........select '/' + fsr.path + '/' + it1.filename as filePath from 		imotransaction it1 		inner join fileServerRoot fsr on it1.fileServerRootId = fsr.rootID  		where  it1.cluDocumentID = '20101'
+2016-05-31 16:24:56,495 INFO  [log] INFO : select '/' + fsr.path + '/' + it1.filename as filePath from 		imotransaction it1 		inner join fileServerRoot fsr on it1.fileServerRootId = fsr.rootID  		where  it1.cluDocumentID = '20101'
+
+2016-05-31 16:24:58,599 INFO  [log] connected to database
+2016-05-31 16:24:59,311 INFO  [log] INFO : [[filePath://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cluimo/clucasqa1/ImoDocuments/2016_05_31/20101_ext_processDoc_2016-05-31T16-24-23-987_20160531065426000976.zip], 
+]
+2016-05-31 16:24:59,314 INFO  [log] Database connection is closed
+2016-05-31 16:24:59,315 INFO  [log] Imo Path : [[filePath://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cluimo/clucasqa1/ImoDocuments/2016_05_31/20101_ext_processDoc_2016-05-31T16-24-23-987_20160531065426000976.zip]]
+2016-05-31 16:24:59,317 INFO  [log] appXmlPathQuery.....select '/' + fsr.path + '/' + cdd.applicationFilename as appXml 	from cluDraftDocument cdd 	inner join fileServerRoot fsr 	on cdd.applicationRootID = fsr.rootID 	inner join exportedAnnotatedDocument ead 	on ead.cluDocumentId = cdd.cluDocumentId 	inner join fileServerRoot fsr2 	on ead.RootID = fsr2.rootID 	where  cdd.cluDocumentId = '20101'
+2016-05-31 16:24:59,319 INFO  [log] INFO : select '/' + fsr.path + '/' + cdd.applicationFilename as appXml 	from cluDraftDocument cdd 	inner join fileServerRoot fsr 	on cdd.applicationRootID = fsr.rootID 	inner join exportedAnnotatedDocument ead 	on ead.cluDocumentId = cdd.cluDocumentId 	inner join fileServerRoot fsr2 	on ead.RootID = fsr2.rootID 	where  cdd.cluDocumentId = '20101'
+
+2016-05-31 16:25:01,403 INFO  [log] connected to database
+2016-05-31 16:25:02,126 INFO  [log] INFO : [[appXml://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cludraft/clucasqa1/2016053106/581/1/20101/20101.app], 
+]
+2016-05-31 16:25:02,128 INFO  [log] Database connection is closed
+2016-05-31 16:25:02,128 INFO  [log] appXmlPath : [[appXml://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cludraft/clucasqa1/2016053106/581/1/20101/20101.app]]
+2016-05-31 16:25:02,130 INFO  [log] inpDocPathQuery.....select '/' + fsr.path + '/' + cd.filename as filename 	from cludocument cd 	inner join fileServerRoot fsr 	on cd.fileServerRootID = fsr.rootID 	where  cd.cluDocumentId = '20101'
+2016-05-31 16:25:02,132 INFO  [log] INFO : select '/' + fsr.path + '/' + cd.filename as filename 	from cludocument cd 	inner join fileServerRoot fsr 	on cd.fileServerRootID = fsr.rootID 	where  cd.cluDocumentId = '20101'
+
+2016-05-31 16:25:04,212 INFO  [log] connected to database
+2016-05-31 16:25:04,909 INFO  [log] INFO : [[filename://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/clusource/clucasqa1/2016053106/581/1/ndmhce-vwh0225818711603563964823.src.lzf], 
+]
+2016-05-31 16:25:04,910 INFO  [log] Database connection is closed
+2016-05-31 16:25:04,911 INFO  [log] InputDocPath : [[filename://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/clusource/clucasqa1/2016053106/581/1/ndmhce-vwh0225818711603563964823.src.lzf]]
+2016-05-31 16:25:04,912 INFO  [log] responseDocPathQuery.....select '/' + fsr.path + '/' + ead.filename as filename 	from exportedAnnotatedDocument ead 	inner join fileServerRoot fsr 	on ead.rootID = fsr.rootID 	where  ead.cluDocumentId = '20101'
+2016-05-31 16:25:04,913 INFO  [log] INFO : select '/' + fsr.path + '/' + ead.filename as filename 	from exportedAnnotatedDocument ead 	inner join fileServerRoot fsr 	on ead.rootID = fsr.rootID 	where  ead.cluDocumentId = '20101'
+
+2016-05-31 16:25:06,990 INFO  [log] connected to database
+2016-05-31 16:25:07,832 INFO  [log] INFO : [[filename://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cluExported/clucasqa1/ExportedAnnotatedDocuments/2016_05_31/2794_20101_20160531065426000995.xml], 
+]
+2016-05-31 16:25:07,833 INFO  [log] Database connection is closed
+2016-05-31 16:25:07,834 INFO  [log] responseDocPath : [[filename://data/ndmhce-nas004-fsRoot-0/fileServer/2014/12_12/cluExported/clucasqa1/ExportedAnnotatedDocuments/2016_05_31/2794_20101_20160531065426000995.xml]]
+2016-05-31 16:25:26,704 INFO  [log]     Adding decompressed request doc C:\clu-QAAutomation\nus\testResults\test\Templates\meditechSmoke_20160531_162133\processDoc\Decompressed_cdaRequestPath_ndmhce-vwh0225818711603563964823.src.lzf.xml
+2016-05-31 16:25:32,457 INFO  [log] Unzip IMO C:\clu-QAAutomation\nus\testResults\test\Templates\meditechSmoke_20160531_162133\processDoc\imoFilePath_20101_ext_processDoc_2016-05-31T16-24-23-987_20160531065426000976.zip
+2016-05-31 16:25:32,474 INFO  [log] PMANOR - parseIMO 1 (processDoc) (imo_request)
+2016-05-31 16:25:32,553 INFO  [log] PMANOR - parseIMO 1 (processDoc) (imo_response)
+2016-05-31 16:25:32,679 INFO  [log] ========= existing ProblemIT [2] ========= : 
+2016-05-31 16:25:32,700 INFO  [log] ========= suggested ProblemIT [3] ========= : 
+2016-05-31 16:25:32,721 INFO  [log] ========= suggested AllergenIT [1] ========= : 
+2016-05-31 16:25:32,733 INFO  [log] ========= existing ProblemIT [2] ========= : 
+2016-05-31 16:25:32,750 INFO  [log] ========= suggested ProblemIT [3] ========= : 
+2016-05-31 16:25:32,773 INFO  [log] ========= suggested AllergenIT [1] ========= : 
+2016-05-31 16:25:32,780 INFO  [log] ======== > Comparing the list : existingProblemsList
+2016-05-31 16:25:32,781 INFO  [log] ++++++++++++++++++++++ COMPARING START ++++++++++++++++++++++
+2016-05-31 16:25:32,782 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:32,783 INFO  [log] codeId = null
+2016-05-31 16:25:32,785 INFO  [log] isExisting = true
+2016-05-31 16:25:32,786 INFO  [log] codeSystemName = null
+2016-05-31 16:25:32,787 INFO  [log] conditionText = Asthma
+2016-05-31 16:25:32,787 INFO  [log] conditionDescription = null
+2016-05-31 16:25:32,788 INFO  [log] status = null
+2016-05-31 16:25:32,788 INFO  [log] conditionType = null
+2016-05-31 16:25:32,790 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,791 INFO  [log] translationCodeList[code] = 94262
+2016-05-31 16:25:32,791 INFO  [log] translationCodeList[displayName] = Asthma
+2016-05-31 16:25:32,792 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:32,793 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,793 INFO  [log] translationCodeList[code] = 195967001
+2016-05-31 16:25:32,794 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:32,794 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:32,796 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,796 INFO  [log] translationCodeList[code] = J45.909
+2016-05-31 16:25:32,797 INFO  [log] translationCodeList[displayName] = Unspecified asthma, uncomplicated
+2016-05-31 16:25:32,797 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:32,798 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,798 INFO  [log] translationCodeList[code] = 493.90
+2016-05-31 16:25:32,799 INFO  [log] translationCodeList[displayName] = Asthma, unspecified type, unspecified
+2016-05-31 16:25:32,799 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:32,802 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:32,803 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:32,804 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:32,805 INFO  [log] entryRootId= 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:32,805 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:32,806 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:32,806 INFO  [log] codeId = null
+2016-05-31 16:25:32,807 INFO  [log] isExisting = true
+2016-05-31 16:25:32,807 INFO  [log] codeSystemName = null
+2016-05-31 16:25:32,808 INFO  [log] conditionText = Asthma
+2016-05-31 16:25:32,808 INFO  [log] conditionDescription = null
+2016-05-31 16:25:32,809 INFO  [log] status = null
+2016-05-31 16:25:32,809 INFO  [log] conditionType = null
+2016-05-31 16:25:32,810 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,810 INFO  [log] translationCodeList[code] = 94262
+2016-05-31 16:25:32,811 INFO  [log] translationCodeList[displayName] = Asthma
+2016-05-31 16:25:32,812 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:32,812 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,813 INFO  [log] translationCodeList[code] = 195967001
+2016-05-31 16:25:32,813 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:32,814 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:32,814 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,815 INFO  [log] translationCodeList[code] = J45.909
+2016-05-31 16:25:32,815 INFO  [log] translationCodeList[displayName] = Unspecified asthma, uncomplicated
+2016-05-31 16:25:32,817 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:32,817 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,817 INFO  [log] translationCodeList[code] = 493.90
+2016-05-31 16:25:32,818 INFO  [log] translationCodeList[displayName] = Asthma, unspecified type, unspecified
+2016-05-31 16:25:32,819 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:32,819 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:32,820 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:32,820 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:32,822 INFO  [log] entryRootId= 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:32,822 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:32,825 INFO  [log] Comparing conditionText for condition : Asthma
+2016-05-31 16:25:32,826 INFO  [log] Expected Asthma
+2016-05-31 16:25:32,827 INFO  [log] Actual Asthma
+2016-05-31 16:25:32,858 INFO  [log] Values are as expected : Asthma and Asthma
+2016-05-31 16:25:32,859 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,862 INFO  [log] Comparing code of translationCodeList(0) for condition : Asthma
+2016-05-31 16:25:32,863 INFO  [log] Expected 94262
+2016-05-31 16:25:32,863 INFO  [log] Actual 94262
+2016-05-31 16:25:32,864 INFO  [log] Values are as expected : 94262 and 94262
+2016-05-31 16:25:32,864 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,865 INFO  [log] Comparing code of translationCodeList(1) for condition : Asthma
+2016-05-31 16:25:32,866 INFO  [log] Expected 195967001
+2016-05-31 16:25:32,866 INFO  [log] Actual 195967001
+2016-05-31 16:25:32,867 INFO  [log] Values are as expected : 195967001 and 195967001
+2016-05-31 16:25:32,867 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,868 INFO  [log] Comparing code of translationCodeList(2) for condition : Asthma
+2016-05-31 16:25:32,869 INFO  [log] Expected J45.909
+2016-05-31 16:25:32,869 INFO  [log] Actual J45.909
+2016-05-31 16:25:32,870 INFO  [log] Values are as expected : J45.909 and J45.909
+2016-05-31 16:25:32,870 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,871 INFO  [log] Comparing code of translationCodeList(3) for condition : Asthma
+2016-05-31 16:25:32,872 INFO  [log] Expected 493.90
+2016-05-31 16:25:32,872 INFO  [log] Actual 493.90
+2016-05-31 16:25:32,873 INFO  [log] Values are as expected : 493.90 and 493.90
+2016-05-31 16:25:32,874 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,875 INFO  [log] Comparing displayName of translationCodeList(0) for condition : Asthma
+2016-05-31 16:25:32,875 INFO  [log] Expected Asthma
+2016-05-31 16:25:32,876 INFO  [log] Actual Asthma
+2016-05-31 16:25:32,876 INFO  [log] Values are as expected : Asthma and Asthma
+2016-05-31 16:25:32,876 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,877 INFO  [log] Comparing displayName of translationCodeList(1) for condition : Asthma
+2016-05-31 16:25:32,878 INFO  [log] Expected 
+2016-05-31 16:25:32,878 INFO  [log] Actual 
+2016-05-31 16:25:32,879 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:32,879 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,880 INFO  [log] Comparing displayName of translationCodeList(2) for condition : Asthma
+2016-05-31 16:25:32,880 INFO  [log] Expected Unspecified asthma, uncomplicated
+2016-05-31 16:25:32,881 INFO  [log] Actual Unspecified asthma, uncomplicated
+2016-05-31 16:25:32,881 INFO  [log] Values are as expected : Unspecified asthma- uncomplicated and Unspecified asthma- uncomplicated
+2016-05-31 16:25:32,882 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,883 INFO  [log] Comparing displayName of translationCodeList(3) for condition : Asthma
+2016-05-31 16:25:32,884 INFO  [log] Expected Asthma, unspecified type, unspecified
+2016-05-31 16:25:32,884 INFO  [log] Actual Asthma, unspecified type, unspecified
+2016-05-31 16:25:32,885 INFO  [log] Values are as expected : Asthma- unspecified type- unspecified and Asthma- unspecified type- unspecified
+2016-05-31 16:25:32,885 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,886 INFO  [log] Comparing codeSystem of translationCodeList(0) for condition : Asthma
+2016-05-31 16:25:32,887 INFO  [log] Expected 
+2016-05-31 16:25:32,887 INFO  [log] Actual 
+2016-05-31 16:25:32,887 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:32,888 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,888 INFO  [log] Comparing codeSystem of translationCodeList(1) for condition : Asthma
+2016-05-31 16:25:32,889 INFO  [log] Expected SNOMED-CT
+2016-05-31 16:25:32,889 INFO  [log] Actual SNOMED-CT
+2016-05-31 16:25:32,890 INFO  [log] Values are as expected : SNOMED-CT and SNOMED-CT
+2016-05-31 16:25:32,890 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,892 INFO  [log] Comparing codeSystem of translationCodeList(2) for condition : Asthma
+2016-05-31 16:25:32,922 INFO  [log] Expected ICD10
+2016-05-31 16:25:32,923 INFO  [log] Actual ICD10
+2016-05-31 16:25:32,923 INFO  [log] Values are as expected : ICD10 and ICD10
+2016-05-31 16:25:32,924 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,926 INFO  [log] Comparing codeSystem of translationCodeList(3) for condition : Asthma
+2016-05-31 16:25:32,926 INFO  [log] Expected ICD-9-CM
+2016-05-31 16:25:32,927 INFO  [log] Actual ICD-9-CM
+2016-05-31 16:25:32,927 INFO  [log] Values are as expected : ICD-9-CM and ICD-9-CM
+2016-05-31 16:25:32,927 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,928 INFO  [log] Comparing entryRootId for condition : Asthma
+2016-05-31 16:25:32,929 INFO  [log] Expected 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:32,929 INFO  [log] Actual 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:32,930 INFO  [log] Values are as expected : 7dd5d753-4b7f-4d63-6899-fdda358ee90e and 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:32,930 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,932 INFO  [log] ++++++++++++++++++++++ COMPARING END ++++++++++++++++++++++
+2016-05-31 16:25:32,932 INFO  [log] ++++++++++++++++++++++ COMPARING START ++++++++++++++++++++++
+2016-05-31 16:25:32,933 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:32,933 INFO  [log] codeId = null
+2016-05-31 16:25:32,933 INFO  [log] isExisting = true
+2016-05-31 16:25:32,934 INFO  [log] codeSystemName = null
+2016-05-31 16:25:32,934 INFO  [log] conditionText = Hypertension
+2016-05-31 16:25:32,935 INFO  [log] conditionDescription = null
+2016-05-31 16:25:32,935 INFO  [log] status = null
+2016-05-31 16:25:32,936 INFO  [log] conditionType = null
+2016-05-31 16:25:32,936 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,936 INFO  [log] translationCodeList[code] = 86491
+2016-05-31 16:25:32,937 INFO  [log] translationCodeList[displayName] = Hypertension
+2016-05-31 16:25:32,938 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:32,938 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,940 INFO  [log] translationCodeList[code] = 38341003
+2016-05-31 16:25:32,940 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:32,941 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:32,941 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,942 INFO  [log] translationCodeList[code] = I10
+2016-05-31 16:25:32,943 INFO  [log] translationCodeList[displayName] = Essential (primary) hypertension
+2016-05-31 16:25:32,943 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:32,944 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,944 INFO  [log] translationCodeList[code] = 401.9
+2016-05-31 16:25:32,946 INFO  [log] translationCodeList[displayName] = Unspecified essential hypertension
+2016-05-31 16:25:32,946 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:32,947 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:32,947 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:32,948 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:32,948 INFO  [log] entryRootId= f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:32,949 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:32,949 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:32,950 INFO  [log] codeId = null
+2016-05-31 16:25:32,950 INFO  [log] isExisting = true
+2016-05-31 16:25:32,951 INFO  [log] codeSystemName = null
+2016-05-31 16:25:32,951 INFO  [log] conditionText = Hypertension
+2016-05-31 16:25:32,953 INFO  [log] conditionDescription = null
+2016-05-31 16:25:32,953 INFO  [log] status = null
+2016-05-31 16:25:32,953 INFO  [log] conditionType = null
+2016-05-31 16:25:32,954 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,954 INFO  [log] translationCodeList[code] = 86491
+2016-05-31 16:25:32,955 INFO  [log] translationCodeList[displayName] = Hypertension
+2016-05-31 16:25:32,955 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:32,956 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,957 INFO  [log] translationCodeList[code] = 38341003
+2016-05-31 16:25:32,957 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:32,958 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:32,958 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,959 INFO  [log] translationCodeList[code] = I10
+2016-05-31 16:25:32,959 INFO  [log] translationCodeList[displayName] = Essential (primary) hypertension
+2016-05-31 16:25:32,960 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:32,961 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:32,961 INFO  [log] translationCodeList[code] = 401.9
+2016-05-31 16:25:32,962 INFO  [log] translationCodeList[displayName] = Unspecified essential hypertension
+2016-05-31 16:25:32,962 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:32,963 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:32,963 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:32,964 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:32,964 INFO  [log] entryRootId= f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:32,966 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:32,966 INFO  [log] Comparing conditionText for condition : Hypertension
+2016-05-31 16:25:32,967 INFO  [log] Expected Hypertension
+2016-05-31 16:25:32,967 INFO  [log] Actual Hypertension
+2016-05-31 16:25:32,968 INFO  [log] Values are as expected : Hypertension and Hypertension
+2016-05-31 16:25:32,969 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,970 INFO  [log] Comparing code of translationCodeList(0) for condition : Hypertension
+2016-05-31 16:25:32,970 INFO  [log] Expected 86491
+2016-05-31 16:25:32,972 INFO  [log] Actual 86491
+2016-05-31 16:25:32,972 INFO  [log] Values are as expected : 86491 and 86491
+2016-05-31 16:25:32,973 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,974 INFO  [log] Comparing code of translationCodeList(1) for condition : Hypertension
+2016-05-31 16:25:32,975 INFO  [log] Expected 38341003
+2016-05-31 16:25:32,975 INFO  [log] Actual 38341003
+2016-05-31 16:25:32,976 INFO  [log] Values are as expected : 38341003 and 38341003
+2016-05-31 16:25:32,976 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,978 INFO  [log] Comparing code of translationCodeList(2) for condition : Hypertension
+2016-05-31 16:25:32,978 INFO  [log] Expected I10
+2016-05-31 16:25:32,979 INFO  [log] Actual I10
+2016-05-31 16:25:32,979 INFO  [log] Values are as expected : I10 and I10
+2016-05-31 16:25:32,980 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,981 INFO  [log] Comparing code of translationCodeList(3) for condition : Hypertension
+2016-05-31 16:25:32,981 INFO  [log] Expected 401.9
+2016-05-31 16:25:32,982 INFO  [log] Actual 401.9
+2016-05-31 16:25:32,983 INFO  [log] Values are as expected : 401.9 and 401.9
+2016-05-31 16:25:32,983 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,984 INFO  [log] Comparing displayName of translationCodeList(0) for condition : Hypertension
+2016-05-31 16:25:32,985 INFO  [log] Expected Hypertension
+2016-05-31 16:25:32,986 INFO  [log] Actual Hypertension
+2016-05-31 16:25:32,986 INFO  [log] Values are as expected : Hypertension and Hypertension
+2016-05-31 16:25:32,987 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,987 INFO  [log] Comparing displayName of translationCodeList(1) for condition : Hypertension
+2016-05-31 16:25:32,988 INFO  [log] Expected 
+2016-05-31 16:25:32,989 INFO  [log] Actual 
+2016-05-31 16:25:32,989 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:32,990 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,990 INFO  [log] Comparing displayName of translationCodeList(2) for condition : Hypertension
+2016-05-31 16:25:32,991 INFO  [log] Expected Essential (primary) hypertension
+2016-05-31 16:25:32,992 INFO  [log] Actual Essential (primary) hypertension
+2016-05-31 16:25:32,992 INFO  [log] Values are as expected : Essential (primary) hypertension and Essential (primary) hypertension
+2016-05-31 16:25:32,993 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:32,994 INFO  [log] Comparing displayName of translationCodeList(3) for condition : Hypertension
+2016-05-31 16:25:32,995 INFO  [log] Expected Unspecified essential hypertension
+2016-05-31 16:25:32,995 INFO  [log] Actual Unspecified essential hypertension
+2016-05-31 16:25:33,026 INFO  [log] Values are as expected : Unspecified essential hypertension and Unspecified essential hypertension
+2016-05-31 16:25:33,027 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,027 INFO  [log] Comparing codeSystem of translationCodeList(0) for condition : Hypertension
+2016-05-31 16:25:33,028 INFO  [log] Expected 
+2016-05-31 16:25:33,028 INFO  [log] Actual 
+2016-05-31 16:25:33,029 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:33,029 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,030 INFO  [log] Comparing codeSystem of translationCodeList(1) for condition : Hypertension
+2016-05-31 16:25:33,031 INFO  [log] Expected SNOMED-CT
+2016-05-31 16:25:33,031 INFO  [log] Actual SNOMED-CT
+2016-05-31 16:25:33,031 INFO  [log] Values are as expected : SNOMED-CT and SNOMED-CT
+2016-05-31 16:25:33,032 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,033 INFO  [log] Comparing codeSystem of translationCodeList(2) for condition : Hypertension
+2016-05-31 16:25:33,033 INFO  [log] Expected ICD10
+2016-05-31 16:25:33,033 INFO  [log] Actual ICD10
+2016-05-31 16:25:33,034 INFO  [log] Values are as expected : ICD10 and ICD10
+2016-05-31 16:25:33,034 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,035 INFO  [log] Comparing codeSystem of translationCodeList(3) for condition : Hypertension
+2016-05-31 16:25:33,036 INFO  [log] Expected ICD-9-CM
+2016-05-31 16:25:33,036 INFO  [log] Actual ICD-9-CM
+2016-05-31 16:25:33,036 INFO  [log] Values are as expected : ICD-9-CM and ICD-9-CM
+2016-05-31 16:25:33,037 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,038 INFO  [log] Comparing entryRootId for condition : Hypertension
+2016-05-31 16:25:33,038 INFO  [log] Expected f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,039 INFO  [log] Actual f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,039 INFO  [log] Values are as expected : f6502fbc-7356-4958-8b80-0ced15f0fed6 and f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,040 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,040 INFO  [log] ++++++++++++++++++++++ COMPARING END ++++++++++++++++++++++
+2016-05-31 16:25:33,041 INFO  [log] ++++++++++++++++++++++ COMPARING START ++++++++++++++++++++++
+2016-05-31 16:25:33,041 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:33,042 INFO  [log] codeId = null
+2016-05-31 16:25:33,042 INFO  [log] isExisting = true
+2016-05-31 16:25:33,043 INFO  [log] codeSystemName = null
+2016-05-31 16:25:33,043 INFO  [log] conditionText = Asthma
+2016-05-31 16:25:33,044 INFO  [log] conditionDescription = null
+2016-05-31 16:25:33,044 INFO  [log] status = null
+2016-05-31 16:25:33,045 INFO  [log] conditionType = null
+2016-05-31 16:25:33,045 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,045 INFO  [log] translationCodeList[code] = 94262
+2016-05-31 16:25:33,046 INFO  [log] translationCodeList[displayName] = Asthma
+2016-05-31 16:25:33,046 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:33,047 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,048 INFO  [log] translationCodeList[code] = 195967001
+2016-05-31 16:25:33,048 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:33,049 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:33,049 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,049 INFO  [log] translationCodeList[code] = J45.909
+2016-05-31 16:25:33,050 INFO  [log] translationCodeList[displayName] = Unspecified asthma, uncomplicated
+2016-05-31 16:25:33,051 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:33,051 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,052 INFO  [log] translationCodeList[code] = 493.90
+2016-05-31 16:25:33,052 INFO  [log] translationCodeList[displayName] = Asthma, unspecified type, unspecified
+2016-05-31 16:25:33,052 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:33,053 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:33,053 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:33,054 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:33,054 INFO  [log] entryRootId= 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:33,055 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:33,055 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:33,056 INFO  [log] codeId = null
+2016-05-31 16:25:33,056 INFO  [log] isExisting = true
+2016-05-31 16:25:33,056 INFO  [log] codeSystemName = null
+2016-05-31 16:25:33,057 INFO  [log] conditionText = Asthma
+2016-05-31 16:25:33,057 INFO  [log] conditionDescription = null
+2016-05-31 16:25:33,058 INFO  [log] status = null
+2016-05-31 16:25:33,058 INFO  [log] conditionType = null
+2016-05-31 16:25:33,059 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,059 INFO  [log] translationCodeList[code] = 94262
+2016-05-31 16:25:33,060 INFO  [log] translationCodeList[displayName] = Asthma
+2016-05-31 16:25:33,060 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:33,061 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,061 INFO  [log] translationCodeList[code] = 195967001
+2016-05-31 16:25:33,062 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:33,062 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:33,063 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,063 INFO  [log] translationCodeList[code] = J45.909
+2016-05-31 16:25:33,064 INFO  [log] translationCodeList[displayName] = Unspecified asthma, uncomplicated
+2016-05-31 16:25:33,066 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:33,067 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,068 INFO  [log] translationCodeList[code] = 493.90
+2016-05-31 16:25:33,069 INFO  [log] translationCodeList[displayName] = Asthma, unspecified type, unspecified
+2016-05-31 16:25:33,069 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:33,070 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:33,071 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:33,072 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:33,081 INFO  [log] entryRootId= 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:33,082 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:33,083 INFO  [log] Comparing conditionText for condition : Asthma
+2016-05-31 16:25:33,084 INFO  [log] Expected Asthma
+2016-05-31 16:25:33,085 INFO  [log] Actual Asthma
+2016-05-31 16:25:33,085 INFO  [log] Values are as expected : Asthma and Asthma
+2016-05-31 16:25:33,087 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,088 INFO  [log] Comparing code of translationCodeList(0) for condition : Asthma
+2016-05-31 16:25:33,089 INFO  [log] Expected 94262
+2016-05-31 16:25:33,089 INFO  [log] Actual 94262
+2016-05-31 16:25:33,090 INFO  [log] Values are as expected : 94262 and 94262
+2016-05-31 16:25:33,090 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,091 INFO  [log] Comparing code of translationCodeList(1) for condition : Asthma
+2016-05-31 16:25:33,092 INFO  [log] Expected 195967001
+2016-05-31 16:25:33,092 INFO  [log] Actual 195967001
+2016-05-31 16:25:33,092 INFO  [log] Values are as expected : 195967001 and 195967001
+2016-05-31 16:25:33,093 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,094 INFO  [log] Comparing code of translationCodeList(2) for condition : Asthma
+2016-05-31 16:25:33,094 INFO  [log] Expected J45.909
+2016-05-31 16:25:33,094 INFO  [log] Actual J45.909
+2016-05-31 16:25:33,095 INFO  [log] Values are as expected : J45.909 and J45.909
+2016-05-31 16:25:33,095 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,096 INFO  [log] Comparing code of translationCodeList(3) for condition : Asthma
+2016-05-31 16:25:33,096 INFO  [log] Expected 493.90
+2016-05-31 16:25:33,097 INFO  [log] Actual 493.90
+2016-05-31 16:25:33,097 INFO  [log] Values are as expected : 493.90 and 493.90
+2016-05-31 16:25:33,098 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,098 INFO  [log] Comparing displayName of translationCodeList(0) for condition : Asthma
+2016-05-31 16:25:33,099 INFO  [log] Expected Asthma
+2016-05-31 16:25:33,099 INFO  [log] Actual Asthma
+2016-05-31 16:25:33,100 INFO  [log] Values are as expected : Asthma and Asthma
+2016-05-31 16:25:33,100 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,101 INFO  [log] Comparing displayName of translationCodeList(1) for condition : Asthma
+2016-05-31 16:25:33,101 INFO  [log] Expected 
+2016-05-31 16:25:33,102 INFO  [log] Actual 
+2016-05-31 16:25:33,102 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:33,105 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,106 INFO  [log] Comparing displayName of translationCodeList(2) for condition : Asthma
+2016-05-31 16:25:33,106 INFO  [log] Expected Unspecified asthma, uncomplicated
+2016-05-31 16:25:33,107 INFO  [log] Actual Unspecified asthma, uncomplicated
+2016-05-31 16:25:33,107 INFO  [log] Values are as expected : Unspecified asthma- uncomplicated and Unspecified asthma- uncomplicated
+2016-05-31 16:25:33,108 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,109 INFO  [log] Comparing displayName of translationCodeList(3) for condition : Asthma
+2016-05-31 16:25:33,109 INFO  [log] Expected Asthma, unspecified type, unspecified
+2016-05-31 16:25:33,110 INFO  [log] Actual Asthma, unspecified type, unspecified
+2016-05-31 16:25:33,110 INFO  [log] Values are as expected : Asthma- unspecified type- unspecified and Asthma- unspecified type- unspecified
+2016-05-31 16:25:33,111 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,111 INFO  [log] Comparing codeSystem of translationCodeList(0) for condition : Asthma
+2016-05-31 16:25:33,112 INFO  [log] Expected 
+2016-05-31 16:25:33,112 INFO  [log] Actual 
+2016-05-31 16:25:33,113 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:33,113 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,114 INFO  [log] Comparing codeSystem of translationCodeList(1) for condition : Asthma
+2016-05-31 16:25:33,114 INFO  [log] Expected SNOMED-CT
+2016-05-31 16:25:33,115 INFO  [log] Actual SNOMED-CT
+2016-05-31 16:25:33,115 INFO  [log] Values are as expected : SNOMED-CT and SNOMED-CT
+2016-05-31 16:25:33,116 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,116 INFO  [log] Comparing codeSystem of translationCodeList(2) for condition : Asthma
+2016-05-31 16:25:33,117 INFO  [log] Expected ICD10
+2016-05-31 16:25:33,117 INFO  [log] Actual ICD10
+2016-05-31 16:25:33,118 INFO  [log] Values are as expected : ICD10 and ICD10
+2016-05-31 16:25:33,120 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,121 INFO  [log] Comparing codeSystem of translationCodeList(3) for condition : Asthma
+2016-05-31 16:25:33,122 INFO  [log] Expected ICD-9-CM
+2016-05-31 16:25:33,122 INFO  [log] Actual ICD-9-CM
+2016-05-31 16:25:33,123 INFO  [log] Values are as expected : ICD-9-CM and ICD-9-CM
+2016-05-31 16:25:33,123 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,126 INFO  [log] Comparing entryRootId for condition : Asthma
+2016-05-31 16:25:33,126 INFO  [log] Expected 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:33,127 INFO  [log] Actual 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:33,128 INFO  [log] Values are as expected : 7dd5d753-4b7f-4d63-6899-fdda358ee90e and 7dd5d753-4b7f-4d63-6899-fdda358ee90e
+2016-05-31 16:25:33,128 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,129 INFO  [log] ++++++++++++++++++++++ COMPARING END ++++++++++++++++++++++
+2016-05-31 16:25:33,129 INFO  [log] ++++++++++++++++++++++ COMPARING START ++++++++++++++++++++++
+2016-05-31 16:25:33,130 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:33,130 INFO  [log] codeId = null
+2016-05-31 16:25:33,131 INFO  [log] isExisting = true
+2016-05-31 16:25:33,162 INFO  [log] codeSystemName = null
+2016-05-31 16:25:33,163 INFO  [log] conditionText = Hypertension
+2016-05-31 16:25:33,163 INFO  [log] conditionDescription = null
+2016-05-31 16:25:33,164 INFO  [log] status = null
+2016-05-31 16:25:33,165 INFO  [log] conditionType = null
+2016-05-31 16:25:33,166 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,166 INFO  [log] translationCodeList[code] = 86491
+2016-05-31 16:25:33,167 INFO  [log] translationCodeList[displayName] = Hypertension
+2016-05-31 16:25:33,168 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:33,168 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,169 INFO  [log] translationCodeList[code] = 38341003
+2016-05-31 16:25:33,170 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:33,170 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:33,171 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,172 INFO  [log] translationCodeList[code] = I10
+2016-05-31 16:25:33,172 INFO  [log] translationCodeList[displayName] = Essential (primary) hypertension
+2016-05-31 16:25:33,173 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:33,173 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,174 INFO  [log] translationCodeList[code] = 401.9
+2016-05-31 16:25:33,174 INFO  [log] translationCodeList[displayName] = Unspecified essential hypertension
+2016-05-31 16:25:33,175 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:33,175 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:33,176 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:33,176 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:33,177 INFO  [log] entryRootId= f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,177 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:33,178 INFO  [log] #################### START DISPLAYING CONDITIONS ####################
+2016-05-31 16:25:33,178 INFO  [log] codeId = null
+2016-05-31 16:25:33,179 INFO  [log] isExisting = true
+2016-05-31 16:25:33,179 INFO  [log] codeSystemName = null
+2016-05-31 16:25:33,180 INFO  [log] conditionText = Hypertension
+2016-05-31 16:25:33,181 INFO  [log] conditionDescription = null
+2016-05-31 16:25:33,181 INFO  [log] status = null
+2016-05-31 16:25:33,182 INFO  [log] conditionType = null
+2016-05-31 16:25:33,183 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,183 INFO  [log] translationCodeList[code] = 86491
+2016-05-31 16:25:33,184 INFO  [log] translationCodeList[displayName] = Hypertension
+2016-05-31 16:25:33,185 INFO  [log] translationCodeList[codeSystem] = 
+2016-05-31 16:25:33,185 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,186 INFO  [log] translationCodeList[code] = 38341003
+2016-05-31 16:25:33,187 INFO  [log] translationCodeList[displayName] = 
+2016-05-31 16:25:33,187 INFO  [log] translationCodeList[codeSystem] = SNOMED-CT
+2016-05-31 16:25:33,188 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,188 INFO  [log] translationCodeList[code] = I10
+2016-05-31 16:25:33,189 INFO  [log] translationCodeList[displayName] = Essential (primary) hypertension
+2016-05-31 16:25:33,190 INFO  [log] translationCodeList[codeSystem] = ICD10
+2016-05-31 16:25:33,190 INFO  [log] ________ translation codes _________
+2016-05-31 16:25:33,191 INFO  [log] translationCodeList[code] = 401.9
+2016-05-31 16:25:33,192 INFO  [log] translationCodeList[displayName] = Unspecified essential hypertension
+2016-05-31 16:25:33,192 INFO  [log] translationCodeList[codeSystem] = ICD-9-CM
+2016-05-31 16:25:33,193 INFO  [log] ^^^^^^^^ tokens ^^^^^^^^
+2016-05-31 16:25:33,193 INFO  [log] duplicate[duplicateType] = null
+2016-05-31 16:25:33,198 INFO  [log] duplicate[rootId] = null
+2016-05-31 16:25:33,198 INFO  [log] entryRootId= f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,199 INFO  [log] #################### END DISPLAYING CONDITIONS   ####################
+2016-05-31 16:25:33,200 INFO  [log] Comparing conditionText for condition : Hypertension
+2016-05-31 16:25:33,200 INFO  [log] Expected Hypertension
+2016-05-31 16:25:33,201 INFO  [log] Actual Hypertension
+2016-05-31 16:25:33,202 INFO  [log] Values are as expected : Hypertension and Hypertension
+2016-05-31 16:25:33,203 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,203 INFO  [log] Comparing code of translationCodeList(0) for condition : Hypertension
+2016-05-31 16:25:33,204 INFO  [log] Expected 86491
+2016-05-31 16:25:33,204 INFO  [log] Actual 86491
+2016-05-31 16:25:33,205 INFO  [log] Values are as expected : 86491 and 86491
+2016-05-31 16:25:33,205 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,206 INFO  [log] Comparing code of translationCodeList(1) for condition : Hypertension
+2016-05-31 16:25:33,206 INFO  [log] Expected 38341003
+2016-05-31 16:25:33,207 INFO  [log] Actual 38341003
+2016-05-31 16:25:33,207 INFO  [log] Values are as expected : 38341003 and 38341003
+2016-05-31 16:25:33,207 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,208 INFO  [log] Comparing code of translationCodeList(2) for condition : Hypertension
+2016-05-31 16:25:33,208 INFO  [log] Expected I10
+2016-05-31 16:25:33,209 INFO  [log] Actual I10
+2016-05-31 16:25:33,209 INFO  [log] Values are as expected : I10 and I10
+2016-05-31 16:25:33,210 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,210 INFO  [log] Comparing code of translationCodeList(3) for condition : Hypertension
+2016-05-31 16:25:33,211 INFO  [log] Expected 401.9
+2016-05-31 16:25:33,211 INFO  [log] Actual 401.9
+2016-05-31 16:25:33,212 INFO  [log] Values are as expected : 401.9 and 401.9
+2016-05-31 16:25:33,212 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,213 INFO  [log] Comparing displayName of translationCodeList(0) for condition : Hypertension
+2016-05-31 16:25:33,214 INFO  [log] Expected Hypertension
+2016-05-31 16:25:33,214 INFO  [log] Actual Hypertension
+2016-05-31 16:25:33,215 INFO  [log] Values are as expected : Hypertension and Hypertension
+2016-05-31 16:25:33,215 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,216 INFO  [log] Comparing displayName of translationCodeList(1) for condition : Hypertension
+2016-05-31 16:25:33,216 INFO  [log] Expected 
+2016-05-31 16:25:33,217 INFO  [log] Actual 
+2016-05-31 16:25:33,217 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:33,217 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,218 INFO  [log] Comparing displayName of translationCodeList(2) for condition : Hypertension
+2016-05-31 16:25:33,219 INFO  [log] Expected Essential (primary) hypertension
+2016-05-31 16:25:33,219 INFO  [log] Actual Essential (primary) hypertension
+2016-05-31 16:25:33,220 INFO  [log] Values are as expected : Essential (primary) hypertension and Essential (primary) hypertension
+2016-05-31 16:25:33,220 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,221 INFO  [log] Comparing displayName of translationCodeList(3) for condition : Hypertension
+2016-05-31 16:25:33,222 INFO  [log] Expected Unspecified essential hypertension
+2016-05-31 16:25:33,223 INFO  [log] Actual Unspecified essential hypertension
+2016-05-31 16:25:33,223 INFO  [log] Values are as expected : Unspecified essential hypertension and Unspecified essential hypertension
+2016-05-31 16:25:33,224 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,224 INFO  [log] Comparing codeSystem of translationCodeList(0) for condition : Hypertension
+2016-05-31 16:25:33,225 INFO  [log] Expected 
+2016-05-31 16:25:33,225 INFO  [log] Actual 
+2016-05-31 16:25:33,226 INFO  [log] Values are as expected :  and 
+2016-05-31 16:25:33,226 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,227 INFO  [log] Comparing codeSystem of translationCodeList(1) for condition : Hypertension
+2016-05-31 16:25:33,227 INFO  [log] Expected SNOMED-CT
+2016-05-31 16:25:33,228 INFO  [log] Actual SNOMED-CT
+2016-05-31 16:25:33,228 INFO  [log] Values are as expected : SNOMED-CT and SNOMED-CT
+2016-05-31 16:25:33,228 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,229 INFO  [log] Comparing codeSystem of translationCodeList(2) for condition : Hypertension
+2016-05-31 16:25:33,229 INFO  [log] Expected ICD10
+2016-05-31 16:25:33,230 INFO  [log] Actual ICD10
+2016-05-31 16:25:33,231 INFO  [log] Values are as expected : ICD10 and ICD10
+2016-05-31 16:25:33,232 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,232 INFO  [log] Comparing codeSystem of translationCodeList(3) for condition : Hypertension
+2016-05-31 16:25:33,233 INFO  [log] Expected ICD-9-CM
+2016-05-31 16:25:33,234 INFO  [log] Actual ICD-9-CM
+2016-05-31 16:25:33,235 INFO  [log] Values are as expected : ICD-9-CM and ICD-9-CM
+2016-05-31 16:25:33,238 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,239 INFO  [log] Comparing entryRootId for condition : Hypertension
+2016-05-31 16:25:33,240 INFO  [log] Expected f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,240 INFO  [log] Actual f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,241 INFO  [log] Values are as expected : f6502fbc-7356-4958-8b80-0ced15f0fed6 and f6502fbc-7356-4958-8b80-0ced15f0fed6
+2016-05-31 16:25:33,243 INFO  [log] AssertionStatus : PASS
+2016-05-31 16:25:33,244 INFO  [log] ++++++++++++++++++++++ COMPARING END ++++++++++++++++++++++
+2016-05-31 16:25:33,244 INFO  [log] ======== > Comparing the list : existingAllergiesList
+2016-05-31 16:25:33,245 INFO  [log] ++++++++++++++++++++++ COMPARING START ++++++++++++++++++++++
+2016-05-31 16:25:33,247 ERROR [SoapUI] An error occurred [Cannot invoke method display() on null object], see error log for details
+2016-05-31 16:25:33,249 ERROR [errorlog] java.lang.NullPointerException: Cannot invoke method display() on null object
+java.lang.NullPointerException: Cannot invoke method display() on null object
+	at org.codehaus.groovy.runtime.NullObject.invokeMethod(NullObject.java:77)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:45)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:42)
+	at org.codehaus.groovy.runtime.callsite.NullCallSite.call(NullCallSite.java:32)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:42)
+	at com.nuance.clu.qaAutomation.common.Condition$display.call(Unknown Source)
+	at com.nuance.clu.qaAutomation.nus.MuseTest.compareConditions(com.nuance.clu.qaAutomation.nus.MuseTest:1610)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:361)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:885)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at com.nuance.clu.qaAutomation.nus.MuseTest$_compareImoRequestAndImoResponse_closure17.doCall(com.nuance.clu.qaAutomation.nus.MuseTest:1673)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:272)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:885)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:418)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:1240)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:1216)
+	at org.codehaus.groovy.runtime.dgm$124.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:271)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:42)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at com.nuance.clu.qaAutomation.nus.MuseTest.compareImoRequestAndImoResponse(com.nuance.clu.qaAutomation.nus.MuseTest:1659)
+	at com.nuance.clu.qaAutomation.nus.MuseTest.runProcessDocumentImo(com.nuance.clu.qaAutomation.nus.MuseTest:297)
+	at com.nuance.clu.qaAutomation.nus.MuseTest$runProcessDocumentImo.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:42)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
+	at Script1.run(Script1.groovy:12)
+	at com.eviware.soapui.support.scripting.groovy.SoapUIGroovyScriptEngine.run(SoapUIGroovyScriptEngine.java:100)
+	at com.eviware.soapui.support.scripting.groovy.SoapUIProGroovyScriptEngineFactory$SoapUIProGroovyScriptEngine.run(SourceFile:89)
+	at com.eviware.soapui.impl.wsdl.teststeps.WsdlGroovyScriptTestStep.run(WsdlGroovyScriptTestStep.java:154)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.runTestStep(AbstractTestCaseRunner.java:239)
+	at com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner.runCurrentTestStep(WsdlTestCaseRunner.java:52)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:152)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:47)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestRunner.run(AbstractTestRunner.java:139)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestRunner.start(AbstractTestRunner.java:81)
+	at com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase.run(WsdlTestCase.java:645)
+	at com.eviware.soapui.tools.SoapUITestCaseRunner.runTestCase(SoapUITestCaseRunner.java:602)
+	at com.eviware.soapui.SoapUIProTestCaseRunner.runTestCase(SourceFile:198)
+	at com.eviware.soapui.tools.SoapUITestCaseRunner.runRunner(SoapUITestCaseRunner.java:399)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.run(AbstractSoapUIRunner.java:162)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.runFromCommandLine(AbstractSoapUIRunner.java:93)
+	at com.eviware.soapui.SoapUIProTestCaseRunner.main(SourceFile:58)
+2016-05-31 16:25:33,316 ERROR [SoapUIProTestCaseRunner] Driver failed, exporting to [C:\Users\utkarsh_sinha\Desktop\MuseExecutor\Templates-meditechSmoke-Driver-2-FAILED.txt]
+2016-05-31 16:25:33,331 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [meditechSmoke], time taken: 249277ms, status: FAILED
+2016-05-31 16:25:33,332 INFO  [SoapUIProTestCaseRunner] TestCase [meditechSmoke] finished with status [FAILED] in 249277ms
+2016-05-31 16:25:33,346 ERROR [SoapUIProTestCaseRunner] java.lang.Exception: TestCase [meditechSmoke] failed without assertions
+
+2016-05-31 16:25:33,347 ERROR [SoapUI] An error occurred [TestCase [meditechSmoke] failed without assertions
+], see error log for details
+2016-05-31 16:25:33,347 ERROR [errorlog] java.lang.Exception: TestCase [meditechSmoke] failed without assertions
+
+java.lang.Exception: TestCase [meditechSmoke] failed without assertions
+
+	at com.eviware.soapui.tools.SoapUITestCaseRunner.throwFailureException(SoapUITestCaseRunner.java:535)
+	at com.eviware.soapui.tools.SoapUITestCaseRunner.runRunner(SoapUITestCaseRunner.java:437)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.run(AbstractSoapUIRunner.java:162)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.runFromCommandLine(AbstractSoapUIRunner.java:93)
+	at com.eviware.soapui.SoapUIProTestCaseRunner.main(SourceFile:58)

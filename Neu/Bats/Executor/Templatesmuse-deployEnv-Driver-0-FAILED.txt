@@ -1,0 +1,10 @@
+Status: FAILED
+Time Taken: 1834
+Size: 0
+Timestamp: Mon Jan 04 12:50:50 IST 2016
+TestStep: Driver
+Error:java.lang.NullPointerException: Cannot invoke method tokenize() on null object
+
+----------------- Messages ------------------------------
+java.lang.NullPointerException: Cannot invoke method tokenize() on null object
+error at line: 7

@@ -1,0 +1,10 @@
+Status: FAILED
+Time Taken: 242122
+Size: 0
+Timestamp: Tue May 31 16:21:31 IST 2016
+TestStep: Driver
+Error:java.lang.NullPointerException: Cannot invoke method display() on null object
+
+----------------- Messages ------------------------------
+java.lang.NullPointerException: Cannot invoke method display() on null object
+error at line: 12
